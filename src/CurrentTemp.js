@@ -22,7 +22,6 @@ class TempGraph extends Component {
 	}
 	async componentDidMount() {
 		try {
-			// const response = await fetch('https://jo3lmalso6.execute-api.us-west-1.amazonaws.com/prod');
 			const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
 			let responseJson = await response.json();
 			this.setState(
