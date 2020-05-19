@@ -8,7 +8,6 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
     <ChartTemp />
     <CurrentTemp />
   </React.StrictMode>,
