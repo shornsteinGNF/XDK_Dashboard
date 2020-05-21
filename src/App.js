@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Bar from './Bar'
+import ChartAcceleration from './ChartAcceleration'
 import ChartHumidity from './ChartHumidity'
 import ChartTemp from './ChartTemp'
 import CurrentBattery from './CurrentBattery'
@@ -52,6 +53,11 @@ function App() {
         <Grid item xs={6}>
           <Paper className={classes.paper}>
             <ChartHumidity />
+          </Paper>
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>
+            <ChartAcceleration />
           </Paper>
         </Grid>
       </Grid>
