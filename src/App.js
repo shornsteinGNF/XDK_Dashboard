@@ -29,17 +29,17 @@ function App() {
     <div className={classes.root}>
       <Bar />
       <Grid container spacing={3}>
-      <Grid item xs={6}>
+      <Grid item xs={4}>
           <Paper className={classes.paper}>
             <CurrentBattery />
           </Paper>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={4}>
           <Paper className={classes.paper}>
             <CurrentTemp />
           </Paper>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={4}>
           <Paper className={classes.paper}>
             <CurrentHumidity />
           </Paper>
