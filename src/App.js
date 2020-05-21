@@ -4,6 +4,7 @@ import './App.css';
 import Bar from './Bar'
 import ChartHumidity from './ChartHumidity'
 import ChartTemp from './ChartTemp'
+import CurrentBattery from './CurrentBattery'
 import CurrentHumidity from './CurrentHumidity'
 import CurrentTemp from './CurrentTemp'
 import Grid from '@material-ui/core/Grid'
@@ -28,6 +29,11 @@ function App() {
     <div className={classes.root}>
       <Bar />
       <Grid container spacing={3}>
+      <Grid item xs={6}>
+          <Paper className={classes.paper}>
+            <CurrentBattery />
+          </Paper>
+        </Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}>
             <CurrentTemp />
