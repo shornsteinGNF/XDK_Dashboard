@@ -45,13 +45,31 @@ class ChartTemp extends Component {
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
 			const tempData = data.map(row => ({time: row.TimeStamp, temp: row.data.temp}))
-			console.log(tempData)
+			
+			function timeConverter(UNIX_timestamp){
+				var a = new Date(UNIX_timestamp*1);
+				var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+				var year = a.getFullYear();
+				var month = months[a.getMonth()];
+				var date = a.getDate();
+				var hour = a.getHours();
+				var min = a.getMinutes();
+				var sec = a.getSeconds();
+				var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+				// var time = toString(time)
+				return time;
+			  }
+
+			const test = Object.keys(tempData).map(key => (
+				{time: timeConverter(tempData[key].time), temp:tempData[key].temp}
+			))
+
 			return (
 				<div>
 				<LineChart
 					width={400}
 					height={400}
-					data={tempData}
+					data={test}
 					margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
 					>
 					<XAxis dataKey="time" />

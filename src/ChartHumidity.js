@@ -45,21 +45,40 @@ class ChartTemp extends Component {
 			let { dataSource } = this.state;
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
-			const xdkData = data.map(row => ({time: row.TimeStamp, temp: row.data.temp, humidity: row.data.humidity}))
-			console.log(xdkData)
+			const xdkData = data.map(row => (
+				{time: row.TimeStamp, temp: row.data.temp, humidity: row.data.humidity}))
+
+			function timeConverter(UNIX_timestamp){
+				var a = new Date(UNIX_timestamp*1);
+				var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+				var year = a.getFullYear();
+				var month = months[a.getMonth()];
+				var date = a.getDate();
+				var hour = a.getHours();
+				var min = a.getMinutes();
+				var sec = a.getSeconds();
+				var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+				// var time = toString(time)
+				return time;
+			  }
+
+			const test = Object.keys(xdkData).map(key => (
+				{time: timeConverter(xdkData[key].time), humidity:xdkData[key].humidity}
+			))
+
 			return (
 				<div>
 				<LineChart
 					width={400}
 					height={400}
-					data={xdkData}
+					data={test}
 					margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
 					>
-					<XAxis dataKey="time" />
+					<XAxis dataKey="time"/>
 					<YAxis dataKey="humidity" />
 					<Tooltip />
 					<CartesianGrid stroke="#f5f5f5" />
-					<Line type="monotone" dataKey="humidity" stroke="#ff7300" yAxisId={0} />
+					<Line type="monotone" dataKey="humidity" stroke="#6200EE" yAxisId={0} />
 				</LineChart>
 				</div>
 			);
