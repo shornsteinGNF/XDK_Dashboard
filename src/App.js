@@ -5,9 +5,10 @@ import Bar from './Bar'
 import ChartAcceleration from './ChartAcceleration'
 import ChartHumidity from './ChartHumidity'
 import ChartTemp from './ChartTemp'
-import CurrentBattery from './CurrentBattery'
-import CurrentHumidity from './CurrentHumidity'
-import CurrentTemp from './CurrentTemp'
+// import CurrentBattery from './CurrentBattery'
+// import CurrentHumidity from './CurrentHumidity'
+// import CurrentTemp from './CurrentTemp'
+import CurrentValues from './CurrentValues'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
@@ -30,7 +31,7 @@ function App() {
     <div className={classes.root}>
       <Bar />
       <Grid container spacing={3}>
-      <Grid item xs={4}>
+      {/* <Grid item xs={4}>
           <Paper className={classes.paper}>
             <CurrentBattery />
           </Paper>
@@ -43,6 +44,11 @@ function App() {
         <Grid item xs={4}>
           <Paper className={classes.paper}>
             <CurrentHumidity />
+          </Paper>
+        </Grid> */}
+        <Grid item xs={4}>
+          <Paper className={classes.paper}>
+            <CurrentValues />
           </Paper>
         </Grid>
         <Grid item xs={6}>
