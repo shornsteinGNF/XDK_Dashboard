@@ -67,8 +67,8 @@ class ChartTemp extends Component {
 
 			return (
 				
+				
 				<div>
-			
 					<h3>Temperature</h3>
 				<LineChart
 					width={400}
@@ -83,7 +83,7 @@ class ChartTemp extends Component {
 					<CartesianGrid stroke="#f5f5f5" />
 					<Line type="monotone" dataKey="temp" stroke="#ff7300" yAxisId={0} />
 				</LineChart>
-
+				
 				</div>
 			);
 		}
