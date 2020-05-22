@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import ChartAcceleration from './ChartAcceleration'
+import ChartBattery from './ChartBattery'
 import ChartHumidity from './ChartHumidity'
 import ChartTemp from './ChartTemp'
 import CurrentValues from './CurrentValues'
@@ -29,6 +30,11 @@ function Contents() {
           <Paper className={classes.paper}>
             <CurrentValues />
           </Paper>
+        </Grid>
+        <Grid item xs={4}>
+        <Paper className={classes.paper}>
+            <ChartBattery />
+        </Paper>
         </Grid>
       </Grid>
       <Grid container spacing={3}>
