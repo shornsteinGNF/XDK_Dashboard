@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/XDK_React_App/static/css/main.5f361e03.chunk.css",
+    "main.js": "/XDK_React_App/static/js/main.2a4ee553.chunk.js",
+    "main.js.map": "/XDK_React_App/static/js/main.2a4ee553.chunk.js.map",
+    "runtime-main.js": "/XDK_React_App/static/js/runtime-main.87a96a07.js",
+    "runtime-main.js.map": "/XDK_React_App/static/js/runtime-main.87a96a07.js.map",
+    "static/js/2.c052bfbe.chunk.js": "/XDK_React_App/static/js/2.c052bfbe.chunk.js",
+    "static/js/2.c052bfbe.chunk.js.map": "/XDK_React_App/static/js/2.c052bfbe.chunk.js.map",
+    "index.html": "/XDK_React_App/index.html",
+    "precache-manifest.3e8c761657c8f29fe1d80d3525e6b20a.js": "/XDK_React_App/precache-manifest.3e8c761657c8f29fe1d80d3525e6b20a.js",
+    "service-worker.js": "/XDK_React_App/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/XDK_React_App/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.c052bfbe.chunk.js.LICENSE.txt": "/XDK_React_App/static/js/2.c052bfbe.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/XDK_React_App/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.87a96a07.js",
+    "static/js/2.c052bfbe.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.2a4ee553.chunk.js"
+  ]
+}
