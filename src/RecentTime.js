@@ -12,7 +12,7 @@ import {
 	Area,
 	Bar
   } from "recharts";
-class CurrentValues extends Component {
+class RecentTime extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -60,19 +60,11 @@ class CurrentValues extends Component {
 			const data = items.map(row => ({time: row.TimeStamp, temp: row.data.temp, humidity: row.data.humidity, battery: row.data.battery}))
             
             return (
-				<div>
-                    <b>Device: </b>7C-EC-79-D3-68-C3
-					<p>
+				// <div>
                     <i>Last reading: {timeConverter(data[data.length-1].time)}</i>
-					</p>
-                {/* <p>Temperature: {data[data.length-1].temp}</p>
-                <p>Humidity: {data[data.length-1].humidity}</p>    
-                <p>Battery: {data[data.length-1].battery}</p> */}
-                    
-                    
-				</div>
+				// </div>
 			);
 		}
 	}
 }
-export default CurrentValues;
+export default RecentTime;

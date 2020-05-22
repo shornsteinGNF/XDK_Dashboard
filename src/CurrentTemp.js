@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import {
-	LineChart,
-	CartesianGrid,
-	XAxis,
-	YAxis,
-	Tooltip,
-	Legend,
-	Line,
-	ComposedChart,
-	Area,
-	Bar
-  } from "recharts";
-class TempGraph extends Component {
+import AcUnitIcon from '@material-ui/icons/AcUnit';
+
+class CurrentTemp extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -47,10 +37,12 @@ class TempGraph extends Component {
 			console.log(tempData)
 			return (
 				<div>
-                    Current Temp: {tempData[tempData.length-1].temp}
+                  {/* <AcUnitIcon/>  */}
+				  <b>Temperature: </b> 
+				  {tempData[tempData.length-1].temp}&#176;C
 				</div>
 			);
 		}
 	}
 }
-export default TempGraph;
+export default CurrentTemp;

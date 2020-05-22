@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import {
-	LineChart,
-	CartesianGrid,
-	XAxis,
-	YAxis,
-	Tooltip,
-	Legend,
-	Line,
-	ComposedChart,
-	Area,
-	Bar,
-  } from "recharts";
+import BatteryFullIcon from '@material-ui/icons/BatteryFull';
+
 class CurrentBattery extends Component {
 	constructor(props) {
 		super(props);
@@ -49,7 +39,8 @@ class CurrentBattery extends Component {
 			
 			return (
 				<div>
-                    Current Battery: {batteryData[batteryData.length-1].battery}
+                    {/* <BatteryFullIcon/> */}
+					<b>Battery: </b>{batteryData[batteryData.length-1].battery}%
 				</div>
 			);
 		}

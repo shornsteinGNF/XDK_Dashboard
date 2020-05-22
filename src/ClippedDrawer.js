@@ -11,6 +11,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Contents from './Contents'
 import MemoryIcon from '@material-ui/icons/Memory';
+import Button from '@material-ui/core/Button'
+import RefreshIcon from '@material-ui/icons/Refresh';
 
 const drawerWidth = 240;
 
@@ -35,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  title: {
+    flexGrow: 1,
+  },
 }));
 
 export default function ClippedDrawer() {
@@ -45,9 +50,10 @@ export default function ClippedDrawer() {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6" noWrap className={classes.title}>
             XDK Dashboard
           </Typography>
+          <Button color="inherit" variant="outlined"><RefreshIcon/></Button>
         </Toolbar>
       </AppBar>
       <Drawer

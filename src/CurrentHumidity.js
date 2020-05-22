@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import {
-	LineChart,
-	CartesianGrid,
-	XAxis,
-	YAxis,
-	Tooltip,
-	Legend,
-	Line,
-	ComposedChart,
-	Area,
-	Bar
-  } from "recharts";
-class TempGraph extends Component {
+import OpacityIcon from '@material-ui/icons/Opacity';
+
+class CurrentHumidity extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -47,10 +37,11 @@ class TempGraph extends Component {
 			console.log(xdkData)
 			return (
 				<div>
-                    Current Humidity: {xdkData[xdkData.length-1].humidity}
+                    {/* <OpacityIcon/> */}
+					<b>Humidity: </b> {xdkData[xdkData.length-1].humidity}%
 				</div>
 			);
 		}
 	}
 }
-export default TempGraph;
+export default CurrentHumidity;

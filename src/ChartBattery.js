@@ -77,10 +77,8 @@ class ChartBattery extends Component {
 					<h3>Battery</h3>
 					<ResponsiveContainer>
 				<BarChart
-					width={400}
-					height={400}
 					data={batteryData}
-					margin={{ top: 5, right: 5, left: 5, bottom: 50 }}
+					margin={{ top: 5, right: 5, left: 5, bottom: 5 }}
 					>
 					<XAxis dataKey="time"/>
 					<YAxis dataKey="battery" />

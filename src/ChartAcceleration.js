@@ -78,8 +78,6 @@ class ChartAcceleration extends Component {
 				<LineChart
 					data={test}
 					margin={{ top: 5, right: 5, left: 5, bottom: 50 }}
-					height={400}
-					width={400}
 					>
 					<XAxis dataKey="time" xAxisId={0}/>
 					<YAxis/>
