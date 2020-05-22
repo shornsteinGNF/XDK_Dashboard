@@ -56,6 +56,7 @@ function Contents() {
         </Grid>
         
         </Grid>
+        <br></br>
         {/* <Divider variant="middle" /> */}
         <h2>Charts</h2>
         <Button>1 day</Button>
