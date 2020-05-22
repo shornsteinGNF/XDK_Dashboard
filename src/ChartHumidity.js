@@ -6,14 +6,11 @@ import {
 	XAxis,
 	YAxis,
 	Tooltip,
-	Legend,
 	Line,
-	ComposedChart,
-	Area,
-	Bar
+	ResponsiveContainer
   } from "recharts";
   
-class ChartTemp extends Component {
+class ChartHumidity extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -67,7 +64,9 @@ class ChartTemp extends Component {
 			))
 
 			return (
+				// <ResponsiveContainer width="95%" height={400}>
 				<div>
+					<h3>Humidity</h3>
 				<LineChart
 					width={400}
 					height={400}
@@ -81,8 +80,9 @@ class ChartTemp extends Component {
 					<Line type="monotone" dataKey="humidity" stroke="#6200EE" yAxisId={0} />
 				</LineChart>
 				</div>
+				// </ResponsiveContainer>
 			);
 		}
 	}
 }
-export default ChartTemp;
+export default ChartHumidity;

@@ -8,12 +8,10 @@ import {
 	Tooltip,
 	Legend,
 	Line,
-	ComposedChart,
-	Area,
-	Bar
+	ResponsiveContainer
   } from "recharts";
   
-class ChartTemp extends Component {
+class ChartAcceleration extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -58,7 +56,6 @@ class ChartTemp extends Component {
 				var min = a.getMinutes();
 				var sec = a.getSeconds();
 				var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-				// var time = toString(time)
 				return time;
 			  }
 
@@ -68,11 +65,12 @@ class ChartTemp extends Component {
 
 			return (
 				<div>
+					<h3>Acceleration</h3>
 				<LineChart
-					width={400}
-					height={400}
 					data={test}
 					margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+					height={400}
+					width={400}
 					>
 					<XAxis dataKey="time" xAxisId={0}/>
 					<YAxis/>
@@ -81,11 +79,12 @@ class ChartTemp extends Component {
 					<Line type="monotone" dataKey="accel_x" stroke="#00e676"/>
 					<Line type="monotone" dataKey="accel_y" stroke="#9c27b0"/>
 					<Line type="monotone" dataKey="accel_z" stroke="#ffeb3b"/>
-					<Legend width={100} wrapperStyle={{ top: 40, right: 20, backgroundColor: '#f5f5f5', border: '1px solid #d5d5d5', borderRadius: 3, lineHeight: '40px' }} />
+					<Legend width={100} wrapperStyle={{ top: 40, right: 20, backgroundColor: '#f5f5f5', border: '1px solid #d5d5d5', borderRadius: 3, lineHeight: '10px' }} />
 				</LineChart>
 				</div>
+
 			);
 		}
 	}
 }
-export default ChartTemp;
+export default ChartAcceleration;

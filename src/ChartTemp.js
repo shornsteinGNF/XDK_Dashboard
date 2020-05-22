@@ -6,11 +6,9 @@ import {
 	XAxis,
 	YAxis,
 	Tooltip,
-	Legend,
 	Line,
-	ComposedChart,
-	Area,
-	Bar
+	Label,
+	ResponsiveContainer
   } from "recharts";
 class ChartTemp extends Component {
 	constructor(props) {
@@ -63,21 +61,29 @@ class ChartTemp extends Component {
 			const test = Object.keys(tempData).map(key => (
 				{time: timeConverter(tempData[key].time), temp:tempData[key].temp}
 			))
+			
+			var element = document
+			var intElemClientHeight = Element.clientHeight;
 
 			return (
+				
 				<div>
+			
+					<h3>Temperature</h3>
 				<LineChart
 					width={400}
 					height={400}
 					data={test}
-					margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+					margin={{ top: 5, right: 5, left: 5, bottom: 5 }}
 					>
 					<XAxis dataKey="time" />
+					{/* <YAxis dataKey="temp" label='degrees Celsius' /> */}
 					<YAxis dataKey="temp" />
 					<Tooltip />
 					<CartesianGrid stroke="#f5f5f5" />
 					<Line type="monotone" dataKey="temp" stroke="#ff7300" yAxisId={0} />
 				</LineChart>
+
 				</div>
 			);
 		}
