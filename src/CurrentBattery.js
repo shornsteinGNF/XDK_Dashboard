@@ -10,7 +10,7 @@ import {
 	Line,
 	ComposedChart,
 	Area,
-	Bar
+	Bar,
   } from "recharts";
 class CurrentBattery extends Component {
 	constructor(props) {

@@ -66,15 +66,21 @@ class ChartTemp extends Component {
 			var intElemClientHeight = Element.clientHeight;
 
 			return (
-				
-				
-				<div>
+				<div style={{
+					paddingBottom: '100%', /* 16:9 */
+					position: 'relative'
+				}}>
+				<div style={{
+					position: 'absolute',
+					width: '90%',
+					height: '90%'
+				}}>
+					
 					<h3>Temperature</h3>
+					<ResponsiveContainer>
 				<LineChart
-					width={400}
-					height={400}
 					data={test}
-					margin={{ top: 5, right: 5, left: 5, bottom: 5 }}
+					margin={{ top: 5, right: 5, left: 5, bottom: 50 }}
 					>
 					<XAxis dataKey="time" />
 					{/* <YAxis dataKey="temp" label='degrees Celsius' /> */}
@@ -83,7 +89,8 @@ class ChartTemp extends Component {
 					<CartesianGrid stroke="#f5f5f5" />
 					<Line type="monotone" dataKey="temp" stroke="#ff7300" yAxisId={0} />
 				</LineChart>
-				
+				</ResponsiveContainer>
+				</div>
 				</div>
 			);
 		}

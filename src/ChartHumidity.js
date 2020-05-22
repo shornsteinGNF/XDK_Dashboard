@@ -64,14 +64,20 @@ class ChartHumidity extends Component {
 			))
 
 			return (
-				// <ResponsiveContainer width="95%" height={400}>
-				<div>
+				<div style={{
+					paddingBottom: '100%',
+					position: 'relative'
+				}}>
+				<div style={{
+					position: 'absolute',
+					width: '90%',
+					height: '90%'
+				}}>
 					<h3>Humidity</h3>
+					<ResponsiveContainer>
 				<LineChart
-					width={400}
-					height={400}
 					data={test}
-					margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+					margin={{ top: 5, right: 5, left: 5, bottom: 50 }}
 					>
 					<XAxis dataKey="time"/>
 					<YAxis dataKey="humidity" />
@@ -79,8 +85,9 @@ class ChartHumidity extends Component {
 					<CartesianGrid stroke="#f5f5f5" />
 					<Line type="monotone" dataKey="humidity" stroke="#6200EE" yAxisId={0} />
 				</LineChart>
+				</ResponsiveContainer>
 				</div>
-				// </ResponsiveContainer>
+				</div>
 			);
 		}
 	}

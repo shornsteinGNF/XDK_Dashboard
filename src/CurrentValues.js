@@ -61,7 +61,7 @@ class CurrentValues extends Component {
             
             return (
 				<div>
-                    <h1>Current</h1>
+                    <h3>Device: 7C-EC-79-D3-68-C3</h3>
                     <i>(as of {timeConverter(data[data.length-1].time)})</i>
                 <p>Temperature: {data[data.length-1].temp}</p>
                 <p>Humidity: {data[data.length-1].humidity}</p>    

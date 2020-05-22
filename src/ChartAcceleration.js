@@ -64,11 +64,20 @@ class ChartAcceleration extends Component {
 			))
 
 			return (
-				<div>
+				<div style={{
+					paddingBottom: '100%',
+					position: 'relative'
+				}}>
+				<div style={{
+					position: 'absolute',
+					width: '90%',
+					height: '90%'
+				}}>
 					<h3>Acceleration</h3>
+					<ResponsiveContainer>
 				<LineChart
 					data={test}
-					margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+					margin={{ top: 5, right: 5, left: 5, bottom: 50 }}
 					height={400}
 					width={400}
 					>
@@ -81,8 +90,9 @@ class ChartAcceleration extends Component {
 					<Line type="monotone" dataKey="accel_z" stroke="#ffeb3b"/>
 					<Legend width={100} wrapperStyle={{ top: 40, right: 20, backgroundColor: '#f5f5f5', border: '1px solid #d5d5d5', borderRadius: 3, lineHeight: '10px' }} />
 				</LineChart>
+				</ResponsiveContainer>
 				</div>
-
+				</div>
 			);
 		}
 	}

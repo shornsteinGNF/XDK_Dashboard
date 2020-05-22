@@ -65,13 +65,22 @@ class ChartBattery extends Component {
 
 			return (
 				// <ResponsiveContainer width="95%" height={400}>
-				<div>
+				<div style={{
+					paddingBottom: '100%',
+					position: 'relative'
+				}}>
+				<div style={{
+					position: 'absolute',
+					width: '90%',
+					height: '90%'
+				}}>
 					<h3>Battery</h3>
+					<ResponsiveContainer>
 				<BarChart
 					width={400}
 					height={400}
 					data={batteryData}
-					margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+					margin={{ top: 5, right: 5, left: 5, bottom: 50 }}
 					>
 					<XAxis dataKey="time"/>
 					<YAxis dataKey="battery" />
@@ -79,8 +88,9 @@ class ChartBattery extends Component {
 					<CartesianGrid stroke="#f5f5f5" />
 					<Bar dataKey="battery" fill="#81c784"/>
 				</BarChart>
+				</ResponsiveContainer>
 				</div>
-				// </ResponsiveContainer>
+				</div>
 			);
 		}
 	}
