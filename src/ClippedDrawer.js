@@ -53,7 +53,7 @@ export default function ClippedDrawer() {
           <Typography variant="h6" noWrap className={classes.title}>
             XDK Dashboard
           </Typography>
-          <Button color="inherit" variant="outlined"><RefreshIcon/></Button>
+          <Button color="inherit" variant="outlined" onClick={() => { window.location.reload(); }}><RefreshIcon/></Button>
         </Toolbar>
       </AppBar>
       <Drawer
