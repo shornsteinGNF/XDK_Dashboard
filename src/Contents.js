@@ -66,24 +66,24 @@ function Contents() {
         <Grid container spacing={4}>
 
       {/* </Grid> */}
-      <Grid item xs={3}>
-        <Paper className={classes.paper}>
-          <ChartAcceleration />
-        </Paper>
-        </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={6}>
         <Paper className={classes.paper}>
             <ChartTemp />
         </Paper>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={6}>
         <Paper className={classes.paper}>
             <ChartHumidity />
           </Paper>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={6}>
         <Paper className={classes.paper}>
             <ChartBattery />
+        </Paper>
+        </Grid>
+        <Grid item xs={6}>
+        <Paper className={classes.paper}>
+          <ChartAcceleration />
         </Paper>
         </Grid>
         </Grid>

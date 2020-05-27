@@ -66,7 +66,7 @@ class ChartBattery extends Component {
 			return (
 				// <ResponsiveContainer width="95%" height={400}>
 				<div style={{
-					paddingBottom: '100%',
+					paddingBottom: '56%',
 					position: 'relative'
 				}}>
 				<div style={{

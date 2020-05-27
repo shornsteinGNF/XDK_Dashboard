@@ -67,7 +67,7 @@ class ChartTemp extends Component {
 
 			return (
 				<div style={{
-					paddingBottom: '100%', /* 16:9 */
+					paddingBottom: '56%', /* 16:9 */
 					position: 'relative'
 				}}>
 				<div style={{
