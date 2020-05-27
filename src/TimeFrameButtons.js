@@ -6,21 +6,19 @@ const dayInMs = 86400000;
 
 function timeLimitDay(){
         var currTimestamp = Date.now();
-        var oneDay = currTimestamp - dayInMs;
-        console.log(oneDay)
+        var timeLimit = currTimestamp - dayInMs;
         return timeLimit
 }
 
 function timeLimitWeek(){
         var currTimestamp = Date.now();
-        var oneWeek = currTimestamp - 7*dayInMs;
-        console.log(oneWeek)
+        var timeLimit = currTimestamp - 7*dayInMs;
         return timeLimit
 }
 
 function timeLimitMonth(){
         var currTimestamp = Date.now();
-        var oneMonth = currTimestamp - 30*dayInMs;
+        var timeLimit = currTimestamp - 30*dayInMs;
         return timeLimit
 }
 
