@@ -78,12 +78,12 @@ function Contents() {
         </Grid>
         <Grid item xs={6}>
         <Paper className={classes.paper}>
-            <ChartBattery />
+          <ChartAcceleration />
         </Paper>
         </Grid>
         <Grid item xs={6}>
         <Paper className={classes.paper}>
-          <ChartAcceleration />
+            <ChartBattery />
         </Paper>
         </Grid>
         </Grid>
