@@ -54,18 +54,12 @@ function Contents() {
             <CurrentBattery/>
           </Paper>
         </Grid>
-        
         </Grid>
         <br></br>
-        {/* <Divider variant="middle" /> */}
         <h2>Charts</h2>
-        <Button>1 day</Button>
-        <Button>1 week</Button>
-        <Button>1 month</Button>
+        <TimeFrameButtons/>
         <p></p>
         <Grid container spacing={4}>
-
-      {/* </Grid> */}
         <Grid item xs={6}>
         <Paper className={classes.paper}>
             <ChartTemp />
