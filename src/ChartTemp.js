@@ -7,9 +7,9 @@ import {
 	YAxis,
 	Tooltip,
 	Line,
-	Label,
 	ResponsiveContainer
   } from "recharts";
+
 class ChartTemp extends Component {
 	constructor(props) {
 		super(props);
@@ -43,7 +43,10 @@ class ChartTemp extends Component {
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
 			const tempData = data.map(row => ({time: row.TimeStamp, temp: row.data.temp}))
-			
+
+			const tempData_filtered = tempData.filter(row => row.time > this.props.timeLimit
+				)
+
 			function timeConverter(UNIX_timestamp){
 				var a = new Date(UNIX_timestamp*1);
 				var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -54,16 +57,12 @@ class ChartTemp extends Component {
 				var min = a.getMinutes();
 				var sec = a.getSeconds();
 				var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-				// var time = toString(time)
 				return time;
 			  }
 
-			const test = Object.keys(tempData).map(key => (
-				{time: timeConverter(tempData[key].time), temp:tempData[key].temp}
+			const test = Object.keys(tempData_filtered).map(key => (
+				{time: timeConverter(tempData_filtered[key].time), temp:tempData_filtered[key].temp}
 			))
-			
-			var element = document
-			var intElemClientHeight = Element.clientHeight;
 
 			return (
 				<div style={{

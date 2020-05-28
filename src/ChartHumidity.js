@@ -44,6 +44,8 @@ class ChartHumidity extends Component {
 			let data = items.map(a => a);
 			const xdkData = data.map(row => (
 				{time: row.TimeStamp, temp: row.data.temp, humidity: row.data.humidity}))
+			
+			const xdkData_filtered = xdkData.filter(row => row.time > this.props.timeLimit)
 
 			function timeConverter(UNIX_timestamp){
 				var a = new Date(UNIX_timestamp*1);
@@ -55,12 +57,11 @@ class ChartHumidity extends Component {
 				var min = a.getMinutes();
 				var sec = a.getSeconds();
 				var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-				// var time = toString(time)
 				return time;
 			  }
 
-			const test = Object.keys(xdkData).map(key => (
-				{time: timeConverter(xdkData[key].time), humidity:xdkData[key].humidity}
+			const test = Object.keys(xdkData_filtered).map(key => (
+				{time: timeConverter(xdkData_filtered[key].time), humidity:xdkData_filtered[key].humidity}
 			))
 
 			return (

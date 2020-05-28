@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import BatteryFullIcon from '@material-ui/icons/BatteryFull';
 
 class CurrentBattery extends Component {
 	constructor(props) {
@@ -33,8 +32,6 @@ class CurrentBattery extends Component {
 			let { dataSource } = this.state;
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
-			console.log(items);
-			console.log(data)
 			const batteryData = data.map(row => ({time: row.TimeStamp, battery: row.data.battery}))
 			
 			return (

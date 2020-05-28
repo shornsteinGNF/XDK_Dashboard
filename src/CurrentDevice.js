@@ -1,17 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import {
-	LineChart,
-	CartesianGrid,
-	XAxis,
-	YAxis,
-	Tooltip,
-	Legend,
-	Line,
-	ComposedChart,
-	Area,
-	Bar
-  } from "recharts";
 class CurrentValues extends Component {
 
 	render() {
