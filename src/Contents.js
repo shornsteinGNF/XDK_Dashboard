@@ -13,7 +13,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import RecentTime from './RecentTime'
 import TimeFrameButtons from './TimeFrameButtons'
-import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,12 +59,12 @@ function Contents() {
         <TimeFrameButtons/>
         <p></p>
         <Grid container spacing={4}>
-        <Grid item xs={6}>
+        {/* <Grid item xs={6}>
         <Paper className={classes.paper}>
             <ChartTemp />
         </Paper>
-        </Grid>
-        <Grid item xs={6}>
+        </Grid> */}
+        {/* <Grid item xs={6}>
         <Paper className={classes.paper}>
             <ChartHumidity />
           </Paper>
@@ -79,7 +78,7 @@ function Contents() {
         <Paper className={classes.paper}>
             <ChartBattery />
         </Paper>
-        </Grid>
+        </Grid> */}
         </Grid>
     </div>
   );

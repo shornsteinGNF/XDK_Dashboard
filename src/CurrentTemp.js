@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import AcUnitIcon from '@material-ui/icons/AcUnit';
 
 class CurrentTemp extends Component {
 	constructor(props) {
@@ -34,7 +33,6 @@ class CurrentTemp extends Component {
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
 			const tempData = data.map(row => ({time: row.TimeStamp, temp: row.data.temp}))
-			console.log(tempData)
 			return (
 				<div>
                   {/* <AcUnitIcon/>  */}

@@ -42,8 +42,11 @@ class ChartBattery extends Component {
 			let { dataSource } = this.state;
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
-			
 
+			const data_filtered = data.filter(row => (
+				row.TimeStamp > this.props.timeLimit
+			))
+			
 			function timeConverter(UNIX_timestamp){
 				var a = new Date(UNIX_timestamp*1);
 				var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -54,14 +57,11 @@ class ChartBattery extends Component {
 				var min = a.getMinutes();
 				var sec = a.getSeconds();
 				var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-				// var time = toString(time)
 				return time;
 			  }
             
-              const batteryData = data.map(row => (
+              const batteryData = data_filtered.map(row => (
 				{time: timeConverter(row.TimeStamp), battery: row.data.battery}))
-            
-            console.log(batteryData)
 
 			return (
 				// <ResponsiveContainer width="95%" height={400}>
@@ -78,7 +78,7 @@ class ChartBattery extends Component {
 					<ResponsiveContainer>
 				<BarChart
 					data={batteryData}
-					margin={{ top: 5, right: 5, left: 5, bottom: 5 }}
+					margin={{ top: 5, right: 5, left: 5, bottom: 50 }}
 					>
 					<XAxis dataKey="time"/>
 					<YAxis dataKey="battery" />

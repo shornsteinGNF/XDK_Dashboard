@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import OpacityIcon from '@material-ui/icons/Opacity';
 
 class CurrentHumidity extends Component {
 	constructor(props) {
@@ -34,7 +33,6 @@ class CurrentHumidity extends Component {
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
 			const xdkData = data.map(row => ({time: row.TimeStamp, temp: row.data.temp, humidity: row.data.humidity}))
-			console.log(xdkData)
 			return (
 				<div>
                     {/* <OpacityIcon/> */}
