@@ -54,9 +54,10 @@ class TimeFrameButtons extends Component {
 	render() {
         return(
                 <div className={classes.root}>
-                        <Button onClick={ this.timeLimitDay }>1 day</Button>
-                <Button onClick={ this.timeLimitWeek }>1 week</Button>
-                <Button onClick={ this.timeLimitMonth }>1 month</Button>
+                <Button variant="outlined" size="small" onClick={ this.timeLimitDay }>1 day</Button>
+                <Button variant="outlined" size="small" onClick={ this.timeLimitWeek }>1 week</Button>
+                <Button variant="outlined" size="small" onClick={ this.timeLimitMonth }>1 month</Button>
+                <p></p>
                 <Grid container spacing={4}>
                 <Grid item xs={6}>
                 <Paper className={classes.paper}>       
