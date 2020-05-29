@@ -5,7 +5,6 @@ import ChartTemp from './ChartTemp';
 import ChartHumidity from './ChartHumidity';
 import ChartAcceleration from './ChartAcceleration';
 import ChartBattery from './ChartBattery';
-
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
