@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -42,43 +42,105 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ClippedDrawer() {
+function ClippedDrawer() {
   const classes = useStyles();
+  const [data, dataSet] = useState(null);
+  useEffect(() => {
+    async function fetchMyAPI() {
+      let response = await fetch(
+        'https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev')
+      let responseJson = await response.json();
+      let test = responseJson
+      let items = responseJson.body.Items;
+      // let items =  data.body.Items;
+      let DeviceIds = items.map(row => (
+        row.DeviceId
+      ));
+      let uniqueDeviceIds = Array.from(new Set(DeviceIds));
+      // dataSet(responseJson)
+      dataSet(uniqueDeviceIds)
+    }
 
-  return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h6" noWrap className={classes.title}>
-            XDK Dashboard
-          </Typography>
-          <Button color="inherit" variant="outlined" onClick={() => { window.location.reload(); }}><RefreshIcon/></Button>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        className={classes.drawer}
-        variant="permanent"
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <Toolbar />
-        <div className={classes.drawerContainer}>
-          <List>
-            {['7C-EC-79-D3-68-C3', 'xdk_mosquitto'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <MemoryIcon /> : <MemoryIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
+    fetchMyAPI()
+  }, []);
+
+  // console.log(data)
+  
+  let list = 0
+
+    if (data == null) {
+      return (
+        <div className={classes.root}>
+          <CssBaseline />
+          <AppBar position="fixed" className={classes.appBar}>
+            <Toolbar>
+              <Typography variant="h6" noWrap className={classes.title}>
+                XDK Dashboard
+              </Typography>
+              <Button color="inherit" variant="outlined" onClick={() => { window.location.reload(); }}><RefreshIcon/></Button>
+            </Toolbar>
+          </AppBar>
+          <Drawer
+            className={classes.drawer}
+            variant="permanent"
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+          >
+            <Toolbar />
+            <div className={classes.drawerContainer}>
+              
+            </div>
+          </Drawer>
+          <main className={classes.content}>
+            <Toolbar />
+            <Contents/>
+          </main>
         </div>
-      </Drawer>
-      <main className={classes.content}>
-        <Toolbar />
-        <Contents/>
-      </main>
-    </div>
-  );
+      );
+    }
+    else {
+      return (
+        <div className={classes.root}>
+          <CssBaseline />
+          <AppBar position="fixed" className={classes.appBar}>
+            <Toolbar>
+              <Typography variant="h6" noWrap className={classes.title}>
+                XDK Dashboard
+              </Typography>
+              <Button color="inherit" variant="outlined" onClick={() => { window.location.reload(); }}><RefreshIcon/></Button>
+            </Toolbar>
+          </AppBar>
+          <Drawer
+            className={classes.drawer}
+            variant="permanent"
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+          >
+            <Toolbar />
+            <div className={classes.drawerContainer}>
+            <List>
+        {data.map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>{index % 2 === 0 ? <MemoryIcon /> : <MemoryIcon />}</ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+              
+            </div>
+          </Drawer>
+          <main className={classes.content}>
+            <Toolbar />
+            <Contents/>
+          </main>
+        </div>
+      );
+
+
+    }
+
 }
+
+export default ClippedDrawer
