@@ -46,8 +46,6 @@ const styles = theme => ({
   },
 });
 
-
-
 class ClippedDrawer extends Component {
   constructor(props) {
     super(props);
@@ -143,7 +141,7 @@ render() {
           </Drawer>
           <main className={classes.content}>
             <Toolbar />
-            <Contents/>
+            <Contents device={this.state.device}/>
           </main>
         </div>
       );

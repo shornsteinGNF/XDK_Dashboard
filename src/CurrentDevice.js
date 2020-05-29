@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
+
 class CurrentValues extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+		  device: null};
+	}
 
 	render() {
             return (
 				<div>
-                    <b>Device: </b>7C-EC-79-D3-68-C3
+                    <b>Device: </b>{this.props.device}
 				</div>
 			);
 		}

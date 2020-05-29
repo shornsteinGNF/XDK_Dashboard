@@ -11,7 +11,7 @@ class CurrentHumidity extends Component {
 	}
 	async componentDidMount() {
 		try {
-			const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
+			const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
 			let responseJson = await response.json();
 			this.setState(
 				{
@@ -32,13 +32,25 @@ class CurrentHumidity extends Component {
 			let { dataSource } = this.state;
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
-			const xdkData = data.map(row => ({time: row.TimeStamp, temp: row.data.temp, humidity: row.data.humidity}))
+			const humidityData_filtered = data.filter(row => row.DeviceId == this.props.device
+				)
+			
+			if (this.props.device == null) {
 			return (
 				<div>
-                    {/* <OpacityIcon/> */}
-					<b>Humidity: </b> {xdkData[xdkData.length-1].humidity}%
+                    {/* <BatteryFullIcon/> */}
+					<b>Humidity: </b>
 				</div>
 			);
+			}
+			else {
+				return (
+					<div>
+						{/* <BatteryFullIcon/> */}
+						<b>Humidity: </b>{humidityData_filtered[humidityData_filtered.length-1].data.humidity}%
+					</div>
+				);
+			}
 		}
 	}
 }

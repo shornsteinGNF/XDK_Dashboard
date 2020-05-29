@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import ChartAcceleration from './ChartAcceleration'
 import ChartBattery from './ChartBattery'
@@ -13,50 +13,63 @@ import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import RecentTime from './RecentTime'
 import TimeFrameButtons from './TimeFrameButtons'
+import { withStyles } from '@material-ui/styles';
 
-const useStyles = makeStyles((theme) => ({
+const drawerWidth = 240;
+
+const styles = theme => ({
   root: {
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(2),
+    // padding: theme.spacing(2),
+    padding: 10,
     textAlign: 'center',
-    color: theme.palette.text.secondary,
+    // color: theme.palette.text.secondary,
+    color: 'Black'
   },
-}));
+});
 
-function Contents() {
-  const classes = useStyles();
+
+class Contents extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      device: null};
+}
+  // const classes = useStyles();
   
-  return (
+  render () {
+    const {classes} = this.props;
+    return (
     <div className={classes.root}>
-      <h2>Recent</h2><RecentTime/>
+      <h2>Recent</h2><RecentTime device={this.props.device}/>
       <p></p>
       <Grid container spacing={4}>
         <Grid item xs={3}>
           <Paper className={classes.paper}>
-            <CurrentDevice />
+            <CurrentDevice device={this.props.device}/>
           </Paper>
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.paper}>
-            <CurrentTemp />
+            <CurrentTemp device={this.props.device}/>
           </Paper>
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.paper}>
-            <CurrentHumidity/>
+            <CurrentHumidity device={this.props.device}/>
           </Paper>
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.paper}>
-            <CurrentBattery/>
+            <CurrentBattery device={this.props.device}/>
           </Paper>
         </Grid>
         </Grid>
         <br></br>
         <h2>Charts</h2>
-        <TimeFrameButtons/>
+        <TimeFrameButtons device={this.props.device}/>
         <p></p>
         <Grid container spacing={4}>
         {/* <Grid item xs={6}>
@@ -83,5 +96,6 @@ function Contents() {
     </div>
   );
 }
+}
 
-export default Contents;
+export default withStyles(styles)(Contents);

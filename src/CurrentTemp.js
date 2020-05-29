@@ -11,7 +11,7 @@ class CurrentTemp extends Component {
 	}
 	async componentDidMount() {
 		try {
-			const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
+			const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
 			let responseJson = await response.json();
 			this.setState(
 				{
@@ -32,14 +32,26 @@ class CurrentTemp extends Component {
 			let { dataSource } = this.state;
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
-			const tempData = data.map(row => ({time: row.TimeStamp, temp: row.data.temp}))
+			const tempData_filtered = data.filter(row => row.DeviceId == this.props.device
+				)
+			if (this.props.device == null) {
 			return (
 				<div>
                   {/* <AcUnitIcon/>  */}
 				  <b>Temperature: </b> 
-				  {tempData[tempData.length-1].temp}&#176;C
+				  
 				</div>
 			);
+		}
+			else {
+				return (
+				<div>
+				{/* <AcUnitIcon/>  */}
+				<b>Temperature: </b> 
+				{tempData_filtered[tempData_filtered.length-1].data.temp}&#176;C
+			  </div>
+				);
+			}
 		}
 	}
 }
