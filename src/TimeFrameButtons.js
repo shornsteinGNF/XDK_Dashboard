@@ -29,7 +29,9 @@ class TimeFrameButtons extends Component {
 
         constructor(props) {
                 super(props);
-                this.state = {timeLimit: 0};
+                this.state = {
+                  timeLimit: 0,
+                  device: null};
         }
 
          timeLimitDay = () => {
@@ -60,22 +62,22 @@ class TimeFrameButtons extends Component {
                 <Grid container spacing={4}>
                 <Grid item xs={6}>
                 <Paper className={classes.paper}>       
-                        <ChartTemp timeLimit = {this.state.timeLimit}/>
+                        <ChartTemp timeLimit = {this.state.timeLimit} device={this.state.device}/>
                 </Paper>
                 </Grid>
                 <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                        <ChartHumidity timeLimit = {this.state.timeLimit}/>
+                        <ChartHumidity timeLimit = {this.state.timeLimit} device={this.state.device}/>
                         </Paper>
                         </Grid>
                         <Grid item xs={6}>
                         <Paper className={classes.paper}>
-                        <ChartAcceleration timeLimit = {this.state.timeLimit}/>
+                        <ChartAcceleration timeLimit = {this.state.timeLimit} device={this.state.device}/>
                         </Paper>
                         </Grid>
                         <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                        <ChartBattery timeLimit = {this.state.timeLimit}/>
+                        <ChartBattery timeLimit = {this.state.timeLimit} device={this.state.device}/>
                         </Paper>
                         </Grid>
                 </Grid>

@@ -44,8 +44,9 @@ class ChartTemp extends Component {
 			let data = items.map(a => a);
 			const tempData = data.map(row => ({time: row.TimeStamp, temp: row.data.temp}))
 
-			const tempData_filtered = tempData.filter(row => row.time > this.props.timeLimit
-				)
+			let tempData_filtered = tempData.filter(row => row.time > this.props.timeLimit)
+			console.log(tempData_filtered)
+
 
 			function timeConverter(UNIX_timestamp){
 				var a = new Date(UNIX_timestamp*1);
