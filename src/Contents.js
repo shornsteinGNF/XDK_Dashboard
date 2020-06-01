@@ -30,15 +30,12 @@ const styles = theme => ({
   },
 });
 
-
 class Contents extends Component {
   constructor(props) {
     super(props);
     this.state = {
       device: null};
 }
-  // const classes = useStyles();
-  
   render () {
     const {classes} = this.props;
     return (
