@@ -43,7 +43,7 @@ class Contents extends Component {
     const {classes} = this.props;
     return (
     <div className={classes.root}>
-      <h2>Recent</h2><RecentTime device={this.props.device}/>
+      <h2>Recent</h2><RecentTime data={this.props.data} device={this.props.device}/>
       <p></p>
       <Grid container spacing={4}>
         <Grid item xs={3}>
@@ -53,17 +53,17 @@ class Contents extends Component {
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.paper}>
-            <CurrentTemp device={this.props.device}/>
+            <CurrentTemp data={this.props.data} device={this.props.device}/>
           </Paper>
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.paper}>
-            <CurrentHumidity device={this.props.device}/>
+            <CurrentHumidity data={this.props.data} device={this.props.device}/>
           </Paper>
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.paper}>
-            <CurrentBattery device={this.props.device}/>
+            <CurrentBattery data={this.props.data} device={this.props.device}/>
           </Paper>
         </Grid>
         </Grid>
