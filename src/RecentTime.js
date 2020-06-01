@@ -10,7 +10,7 @@ class RecentTime extends Component {
 	}
 	async componentDidMount() {
 		try {
-			const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
+			const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
 			let responseJson = await response.json();
 			this.setState(
 				{
@@ -45,13 +45,23 @@ class RecentTime extends Component {
 		} else {
 			let { dataSource } = this.state;
 			let items = dataSource.body.Items
-			const data = items.map(row => ({time: row.TimeStamp, temp: row.data.temp, humidity: row.data.humidity, battery: row.data.battery}))
-            
-            return (
+			// const data = items.map(row => ({time: row.TimeStamp, temp: row.data.temp, humidity: row.data.humidity, battery: row.data.battery}))
+            const data_filtered = items.filter(row => row.DeviceId == this.props.device)
+
+			if (this.props.device == null) {
+			return (
 				// <div>
-                    <i>Last reading: {timeConverter(data[data.length-1].time)}</i>
+                    <i>Last reading:</i>
 				// </div>
 			);
+			}
+			else {
+				return (
+					// <div>
+						<i>Last reading: {timeConverter(data_filtered[data_filtered.length-1].TimeStamp)}</i>
+					// </div>
+				);
+			}
 		}
 	}
 }

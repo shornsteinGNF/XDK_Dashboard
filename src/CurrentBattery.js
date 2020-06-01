@@ -11,7 +11,7 @@ class CurrentBattery extends Component {
 	}
 	async componentDidMount() {
 		try {
-			const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
+			const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
 			let responseJson = await response.json();
 			this.setState(
 				{
@@ -32,14 +32,25 @@ class CurrentBattery extends Component {
 			let { dataSource } = this.state;
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
-			const batteryData = data.map(row => ({time: row.TimeStamp, battery: row.data.battery}))
+			const batteryData_filtered = data.filter(row => row.DeviceId == this.props.device
+				)
 			
+			if (this.props.device == null) {
 			return (
 				<div>
                     {/* <BatteryFullIcon/> */}
-					<b>Battery: </b>{batteryData[batteryData.length-1].battery}%
+					<b>Battery: </b>
 				</div>
 			);
+			}
+			else {
+				return (
+					<div>
+						{/* <BatteryFullIcon/> */}
+						<b>Battery: </b>{batteryData_filtered[batteryData_filtered.length-1].data.battery}%
+					</div>
+				);
+			}
 		}
 	}
 }

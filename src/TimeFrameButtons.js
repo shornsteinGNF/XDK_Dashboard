@@ -5,7 +5,6 @@ import ChartTemp from './ChartTemp';
 import ChartHumidity from './ChartHumidity';
 import ChartAcceleration from './ChartAcceleration';
 import ChartBattery from './ChartBattery';
-
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
@@ -27,29 +26,32 @@ const useStyles = makeStyles((theme) => ({
 const classes = useStyles;
 
 class TimeFrameButtons extends Component {
+  constructor(props) {
+          super(props);
+          this.state = {
+            timeLimit: 0,
+            device: null};
+  }
 
-        constructor(props) {
-                super(props);
-                this.state = {timeLimit: 0};
-        }
+    timeLimitDay = () => {
+          var currTimestamp = Date.now();
+          var time = currTimestamp - dayInMs;
+          this.setState({ timeLimit: time });
+  }
+  
+    timeLimitWeek = () => {
+          var currTimestamp = Date.now();
+          var time = currTimestamp - 7*dayInMs;
+          this.setState({ timeLimit: time });
+  }
+  
+    timeLimitMonth = () => {
+          var currTimestamp = Date.now();
+          var timeLimit = currTimestamp - 30*dayInMs;
+          this.setState({ timeLimit: timeLimit });
+  }
 
-         timeLimitDay = () => {
-                var currTimestamp = Date.now();
-                var time = currTimestamp - dayInMs;
-                this.setState({ timeLimit: time });
-        }
         
-         timeLimitWeek = () => {
-                var currTimestamp = Date.now();
-                var time = currTimestamp - 7*dayInMs;
-                this.setState({ timeLimit: time });
-        }
-        
-         timeLimitMonth = () => {
-                var currTimestamp = Date.now();
-                var timeLimit = currTimestamp - 30*dayInMs;
-                this.setState({ timeLimit: timeLimit });
-        }
 
 	render() {
         return(
@@ -61,22 +63,23 @@ class TimeFrameButtons extends Component {
                 <Grid container spacing={4}>
                 <Grid item xs={6}>
                 <Paper className={classes.paper}>       
-                        <ChartTemp timeLimit = {this.state.timeLimit}/>
+                        {/* <ChartTemp timeLimit = {this.state.timeLimit} device={this.state.device}/> */}
+                        <ChartTemp  timeLimit={this.state.timeLimit} device={this.props.device}/>
                 </Paper>
                 </Grid>
                 <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                        <ChartHumidity timeLimit = {this.state.timeLimit}/>
+                        <ChartHumidity timeLimit = {this.state.timeLimit} device={this.props.device}/>
                         </Paper>
                         </Grid>
                         <Grid item xs={6}>
                         <Paper className={classes.paper}>
-                        <ChartAcceleration timeLimit = {this.state.timeLimit}/>
+                        <ChartAcceleration timeLimit = {this.state.timeLimit} device={this.props.device}/>
                         </Paper>
                         </Grid>
                         <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                        <ChartBattery timeLimit = {this.state.timeLimit}/>
+                        <ChartBattery timeLimit = {this.state.timeLimit} device={this.props.device}/>
                         </Paper>
                         </Grid>
                 </Grid>
