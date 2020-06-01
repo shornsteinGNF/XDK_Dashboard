@@ -84,12 +84,12 @@ class TimeFrameButtons extends Component {
                         </Grid> */}
               <Grid item xs={12} md={6} lg={3}>
                 <Paper className={classes.paper}>
-                    <Chart title="Temperature" yKey="data.temp" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
+                    <Chart title="Temperature" yKey="data.temp" lineColor="#ff7300" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>
               <Grid item xs={12} md={6} lg={3}>
                 <Paper className={classes.paper}>
-                    <Chart title="Humidity" yKey="data.humidity" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
+                    <Chart title="Humidity" yKey="data.humidity" lineColor="Blue" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>
               <Grid item xs={12} md={6} lg={3}>
@@ -99,7 +99,7 @@ class TimeFrameButtons extends Component {
               </Grid>
               <Grid item xs={12} md={6} lg={3}>
                 <Paper className={classes.paper}>
-                    <Chart title="Battery" yKey="data.battery" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
+                    <Chart title="Battery" yKey="data.battery" lineColor="Green" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>
             </Grid>

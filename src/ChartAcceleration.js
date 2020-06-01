@@ -19,30 +19,12 @@ class ChartAcceleration extends Component {
 			dataSource: null
 		};
 	}
-	// async componentDidMount() {
-	// 	try {
-	// 		// const response = await fetch('https://jo3lmalso6.execute-api.us-west-1.amazonaws.com/prod');
-	// 		const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
-	// 		let responseJson = await response.json();
-	// 		this.setState(
-	// 			{
-	// 				isLoading: false,
-	// 				dataSource: responseJson
-	// 			},
-	// 			function() {}
-	// 		);
-	// 	} catch (error) {
-	// 		console.error(error);
-	// 	}
-	// }
 
 	render() {
 		if (this.props.data == null) {
 			return <div>Loading...</div>;
 		} else {
 			let data = this.props.data;
-			// let items = dataSource.body.Items
-			// let data = items.map(a => a);
 			const data_filtered = data.filter(row => row.DeviceId == this.props.device)
 			const xdkData = data_filtered.map(row => (
 				{time: row.TimeStamp, accel_x: row.data.accel_x, accel_y: row.data.accel_y, accel_z: row.data.accel_z, accel_mag: row.data.accel_mag}))
@@ -88,9 +70,9 @@ class ChartAcceleration extends Component {
 					<YAxis/>
 					<Tooltip />
 					<CartesianGrid stroke="#f5f5f5" />
-					<Line type="monotone" dataKey="accel_x" stroke="#00e676"/>
-					<Line type="monotone" dataKey="accel_y" stroke="#9c27b0"/>
-					<Line type="monotone" dataKey="accel_z" stroke="#ffeb3b"/>
+					<Line type="monotone" dataKey="accel_x" stroke="Blue"/>
+					<Line type="monotone" dataKey="accel_y" stroke="Red"/>
+					<Line type="monotone" dataKey="accel_z" stroke="#CCCC00"/>
 					<Legend width={100} wrapperStyle={{ top: -50, right: -15, backgroundColor: '#f5f5f5', border: '1px solid #d5d5d5', borderRadius: 3, lineHeight: '10px' }} />
 				</LineChart>
 				</ResponsiveContainer>
