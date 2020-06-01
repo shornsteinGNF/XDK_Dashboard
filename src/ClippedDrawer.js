@@ -32,7 +32,6 @@ const styles = theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    padding: 10,
   },
   drawerContainer: {
     overflow: 'auto',
@@ -107,8 +106,8 @@ render() {
           >
             <Toolbar />
             <div className={classes.drawerContainer}>
-              <h3>Devices</h3>
-            <List>
+              {/* <h4 style={{ textAlign: 'center' }} >Devices</h4> */}
+            <List >
         {this.state.ids.map((text, index) => (
           <ListItem button onClick={() => this.setState({device: text})}   key={text}>
             <ListItemIcon><MemoryIcon /></ListItemIcon>
