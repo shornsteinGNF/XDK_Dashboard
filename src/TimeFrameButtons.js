@@ -64,22 +64,22 @@ class TimeFrameButtons extends Component {
                 <Grid item xs={6}>
                 <Paper className={classes.paper}>       
                         {/* <ChartTemp timeLimit = {this.state.timeLimit} device={this.state.device}/> */}
-                        <ChartTemp  timeLimit={this.state.timeLimit} device={this.props.device}/>
+                        <ChartTemp  data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                 </Paper>
                 </Grid>
                 <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                        <ChartHumidity timeLimit = {this.state.timeLimit} device={this.props.device}/>
+                        <ChartHumidity data={this.props.data} timeLimit = {this.state.timeLimit} device={this.props.device}/>
                         </Paper>
                         </Grid>
                         <Grid item xs={6}>
                         <Paper className={classes.paper}>
-                        <ChartAcceleration timeLimit = {this.state.timeLimit} device={this.props.device}/>
+                        <ChartAcceleration data={this.props.data} timeLimit = {this.state.timeLimit} device={this.props.device}/>
                         </Paper>
                         </Grid>
                         <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                        <ChartBattery timeLimit = {this.state.timeLimit} device={this.props.device}/>
+                        <ChartBattery data={this.props.data} timeLimit = {this.state.timeLimit} device={this.props.device}/>
                         </Paper>
                         </Grid>
                 </Grid>

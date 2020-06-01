@@ -18,30 +18,30 @@ class ChartBattery extends Component {
 			dataSource: null
 		};
 	}
-	async componentDidMount() {
-		try {
-			// const response = await fetch('https://jo3lmalso6.execute-api.us-west-1.amazonaws.com/prod');
-			const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
-			let responseJson = await response.json();
-			this.setState(
-				{
-					isLoading: false,
-					dataSource: responseJson
-				},
-				function() {}
-			);
-		} catch (error) {
-			console.error(error);
-		}
-	}
+	// async componentDidMount() {
+	// 	try {
+	// 		// const response = await fetch('https://jo3lmalso6.execute-api.us-west-1.amazonaws.com/prod');
+	// 		const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
+	// 		let responseJson = await response.json();
+	// 		this.setState(
+	// 			{
+	// 				isLoading: false,
+	// 				dataSource: responseJson
+	// 			},
+	// 			function() {}
+	// 		);
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	}
+	// }
 
 	render() {
-		if (this.state.isLoading) {
+		if (this.props.data == null) {
 			return <div>Loading...</div>;
 		} else {
-			let { dataSource } = this.state;
-			let items = dataSource.body.Items
-			let data = items.map(a => a);
+			let data = this.props.data;
+			// let items = dataSource.body.Items
+			// let data = items.map(a => a);
 			let data_device_filter = data.filter(row => row.DeviceId == this.props.device)
 			const data_filtered = data_device_filter.filter(row => (
 				row.TimeStamp > this.props.timeLimit

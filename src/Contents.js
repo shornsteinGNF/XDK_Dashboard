@@ -69,7 +69,7 @@ class Contents extends Component {
         </Grid>
         <br></br>
         <h2>Charts</h2>
-        <TimeFrameButtons device={this.props.device}/>
+        <TimeFrameButtons data={this.props.data} device={this.props.device}/>
         <p></p>
         <Grid container spacing={4}>
         {/* <Grid item xs={6}>
