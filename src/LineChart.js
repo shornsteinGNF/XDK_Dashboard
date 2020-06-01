@@ -10,7 +10,7 @@ import {
 	ResponsiveContainer
   } from "recharts";
 
-class ChartTemp extends Component {
+class Chart extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -38,12 +38,13 @@ class ChartTemp extends Component {
 				));
 	
 			const data_timeConverted = Object.keys(data_filtered).map(key => (
-				{TimeStamp: this.timeConverter(data_filtered[key].TimeStamp), temp:data_filtered[key].data.temp}
+				{TimeStamp: this.timeConverter(data_filtered[key].TimeStamp), data:data_filtered[key].data}
 			))
-			
+
+			console.log(this.props.data)
 			return (
 				<div style={{
-					paddingBottom: '56%', /* 16:9 */
+					paddingBottom: '56%',
 					position: 'relative'
 				}}>
 				<div style={{
@@ -51,19 +52,17 @@ class ChartTemp extends Component {
 					width: '90%',
 					height: '90%'
 				}}>
-					
-					<h3>Temperature</h3>
+					<h3>{this.props.title}</h3>
 					<ResponsiveContainer>
 				<LineChart
 					data={data_timeConverted}
 					margin={{ top: 5, right: 5, left: 5, bottom: 50 }}
 					>
 					<XAxis dataKey="TimeStamp" />
-					{/* <YAxis dataKey="temp" label='degrees Celsius' /> */}
-					<YAxis dataKey="temp" />
+					<YAxis dataKey={this.props.yKey} />
 					<Tooltip />
 					<CartesianGrid stroke="#f5f5f5" />
-					<Line type="monotone" dataKey="temp" stroke="#ff7300" yAxisId={0} />
+					<Line type="monotone" dataKey={this.props.yKey} stroke="#ff7300" yAxisId={0} />
 				</LineChart>
 				</ResponsiveContainer>
 				</div>
@@ -72,4 +71,4 @@ class ChartTemp extends Component {
 		}
 	}
 }
-export default ChartTemp;
+export default Chart;

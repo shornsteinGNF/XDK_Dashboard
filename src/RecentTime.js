@@ -44,7 +44,6 @@ class RecentTime extends Component {
 			return <i>Last reading:</i>;
 		} else {
 			let data = this.props.data
-			console.log(data)
           const data_filtered = data.filter(row => row.DeviceId == this.props.device)
 
 			if (this.props.device == null) {

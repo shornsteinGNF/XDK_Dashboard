@@ -8,6 +8,7 @@ import ChartBattery from './ChartBattery';
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
+import Chart from './LineChart'
 
 
 const dayInMs = 86400000;
@@ -61,9 +62,8 @@ class TimeFrameButtons extends Component {
                 <Button variant="outlined" size="small" onClick={ this.timeLimitMonth }>1 month</Button>
                 <p></p>
                 <Grid container spacing={4}>
-                <Grid item xs={6}>
+                {/* <Grid item xs={6}>
                 <Paper className={classes.paper}>       
-                        {/* <ChartTemp timeLimit = {this.state.timeLimit} device={this.state.device}/> */}
                         <ChartTemp  data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                 </Paper>
                 </Grid>
@@ -81,9 +81,29 @@ class TimeFrameButtons extends Component {
                 <Paper className={classes.paper}>
                         <ChartBattery data={this.props.data} timeLimit = {this.state.timeLimit} device={this.props.device}/>
                         </Paper>
-                        </Grid>
-                </Grid>
-                </div>
+                        </Grid> */}
+              <Grid item xs={12} sm={6}>
+                <Paper className={classes.paper}>
+                    <Chart title="Temperature" yKey="data.temp" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
+                  </Paper>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Paper className={classes.paper}>
+                    <Chart title="Humidity" yKey="data.humidity" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
+                  </Paper>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Paper className={classes.paper}>
+                    <ChartAcceleration title="Acceleration" yKey="temp" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
+                  </Paper>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Paper className={classes.paper}>
+                    <Chart title="Battery" yKey="data.battery" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
+                  </Paper>
+              </Grid>
+            </Grid>
+          </div>
         )
 		}
 	}
