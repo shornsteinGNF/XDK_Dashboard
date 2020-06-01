@@ -8,21 +8,21 @@ class RecentTime extends Component {
 			dataSource: null
 		};
 	}
-	async componentDidMount() {
-		try {
-			const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
-			let responseJson = await response.json();
-			this.setState(
-				{
-					isLoading: false,
-					dataSource: responseJson
-				},
-				function() {}
-			);
-		} catch (error) {
-			console.error(error);
-		}
-    }
+	// async componentDidMount() {
+	// 	try {
+	// 		const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
+	// 		let responseJson = await response.json();
+	// 		this.setState(
+	// 			{
+	// 				isLoading: false,
+	// 				dataSource: responseJson
+	// 			},
+	// 			function() {}
+	// 		);
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	}
+    // }
 
 	render() {
 
@@ -40,19 +40,16 @@ class RecentTime extends Component {
             return time;
           }
 
-		if (this.state.isLoading) {
-			return <div>Loading...</div>;
+		if (this.props.data == null) {
+			return <i>Last reading:</i>;
 		} else {
-			let { dataSource } = this.state;
-			let items = dataSource.body.Items
-			// const data = items.map(row => ({time: row.TimeStamp, temp: row.data.temp, humidity: row.data.humidity, battery: row.data.battery}))
-            const data_filtered = items.filter(row => row.DeviceId == this.props.device)
+			let data = this.props.data
+			console.log(data)
+          const data_filtered = data.filter(row => row.DeviceId == this.props.device)
 
 			if (this.props.device == null) {
 			return (
-				// <div>
                     <i>Last reading:</i>
-				// </div>
 			);
 			}
 			else {

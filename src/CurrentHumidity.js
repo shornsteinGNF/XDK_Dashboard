@@ -4,50 +4,20 @@ import './App.css';
 class CurrentHumidity extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			isLoading: true,
-			dataSource: null
-		};
-	}
-	async componentDidMount() {
-		try {
-			const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
-			let responseJson = await response.json();
-			this.setState(
-				{
-					isLoading: false,
-					dataSource: responseJson
-				},
-				function() {}
-			);
-		} catch (error) {
-			console.error(error);
-		}
 	}
 
 	render() {
-		if (this.state.isLoading) {
+		if (this.props.data == null) {
 			return <div>Loading...</div>;
 		} else {
-			let { dataSource } = this.state;
-			let items = dataSource.body.Items
-			let data = items.map(a => a);
-			const humidityData_filtered = data.filter(row => row.DeviceId == this.props.device
-				)
-			
 			if (this.props.device == null) {
-			return (
-				<div>
-                    {/* <BatteryFullIcon/> */}
-					<b>Humidity: </b>
-				</div>
-			);
+				return (<b>Humidity:</b>);
 			}
 			else {
+				const data_filtered = this.props.data.filter(row => row.DeviceId == this.props.device)
 				return (
 					<div>
-						{/* <BatteryFullIcon/> */}
-						<b>Humidity: </b>{humidityData_filtered[humidityData_filtered.length-1].data.humidity}%
+						<b>Humidity: </b>{data_filtered[data_filtered.length-1].data.humidity}%
 					</div>
 				);
 			}

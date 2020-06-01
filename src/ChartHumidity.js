@@ -18,30 +18,30 @@ class ChartHumidity extends Component {
 			dataSource: null
 		};
 	}
-	async componentDidMount() {
-		try {
-			const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
-			// const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
-			let responseJson = await response.json();
-			this.setState(
-				{
-					isLoading: false,
-					dataSource: responseJson
-				},
-				function() {}
-			);
-		} catch (error) {
-			console.error(error);
-		}
-	}
+	// async componentDidMount() {
+	// 	try {
+	// 		const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
+	// 		// const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
+	// 		let responseJson = await response.json();
+	// 		this.setState(
+	// 			{
+	// 				isLoading: false,
+	// 				dataSource: responseJson
+	// 			},
+	// 			function() {}
+	// 		);
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	}
+	// }
 
 	render() {
-		if (this.state.isLoading) {
+		if (this.props.data == null) {
 			return <div>Loading...</div>;
 		} else {
-			let { dataSource } = this.state;
-			let items = dataSource.body.Items
-			let data = items.map(a => a);
+			let data = this.props.data;
+			// let items = dataSource.body.Items
+			// let data = items.map(a => a);
 			const data_filtered = data.filter(row => row.DeviceId == this.props.device)
 			const xdkData = data_filtered.map(row => (
 				{time: row.TimeStamp, temp: row.data.temp, humidity: row.data.humidity}))

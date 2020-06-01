@@ -18,36 +18,40 @@ class ChartTemp extends Component {
 			dataSource: null
 		};
 	}
-	async componentDidMount() {
-		try {
-			const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
-			// const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
-			let responseJson = await response.json();
-			this.setState(
-				{
-					isLoading: false,
-					dataSource: responseJson
-				},
-				function() {}
-			);
-		} catch (error) {
-			console.error(error);
-		}
-	}
+	// async componentDidMount() {
+	// 	try {
+	// 		const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
+	// 		// const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
+	// 		let responseJson = await response.json();
+	// 		this.setState(
+	// 			{
+	// 				isLoading: false,
+	// 				dataSource: responseJson
+	// 			},
+	// 			function() {}
+	// 		);
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	}
+	// }
+
+	// componentDidMount() {
+	// 	this.setState(() => {
+	// 		console.log(this.props.data)
+	// 	}
+
+	// 	)
+	// }
 
 	render() {
-		if (this.state.isLoading) {
+		if (this.props.data == null) {
 			return <div>Loading...</div>;
 		} else {
-			let { dataSource } = this.state;
-			let items = dataSource.body.Items
-			let data = items.map(a => a);
+			let data = this.props.data;
 			const data_filtered = data.filter(row => row.DeviceId == this.props.device);
-
 			const tempData = data_filtered.map(row => ({time: row.TimeStamp, temp: row.data.temp}))
-
 			let tempData_filtered = tempData.filter(row => row.time > this.props.timeLimit)
-			
+		
 			function timeConverter(UNIX_timestamp){
 				var a = new Date(UNIX_timestamp*1);
 				var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];

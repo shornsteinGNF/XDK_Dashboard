@@ -55,7 +55,8 @@ class ClippedDrawer extends Component {
     super(props);
     this.state = {
       data: null,
-      device: null};
+      device: null,
+      ids: null,};
 }
 
   async componentDidMount() {
@@ -70,7 +71,8 @@ class ClippedDrawer extends Component {
       let uniqueDeviceIds = Array.from(new Set(DeviceIds));
 			this.setState(
 				{
-					data: uniqueDeviceIds,
+          data: items,
+					ids: uniqueDeviceIds,
 				},
 				function() {}
 			);
@@ -83,34 +85,6 @@ render() {
   const {classes} = this.props;
     if (this.state.data == null) {
       return(<div>loading...</div>)
-      // return (
-      //   <div className={classes.root}>
-      //     <CssBaseline />
-      //     <AppBar position="fixed" className={classes.appBar}>
-      //       <Toolbar>
-      //         <Typography variant="h6" noWrap className={classes.title}>
-      //           XDK Dashboard
-      //         </Typography>
-      //         <Button color="inherit" variant="outlined" onClick={() => { window.location.reload(); }}><RefreshIcon/></Button>
-      //       </Toolbar>
-      //     </AppBar>
-      //     <Drawer
-      //       className={classes.drawer}
-      //       variant="permanent"
-      //       classes={{
-      //         paper: classes.drawerPaper,
-      //       }}
-      //     >
-      //       <Toolbar />
-      //       <div className={classes.drawerContainer}>
-      //       </div>
-      //     </Drawer>
-      //     <main className={classes.content}>
-      //       <Toolbar />
-      //       <Contents/>
-      //     </main>
-        // </div>
-      // );
     }
     else {
       return (
@@ -135,7 +109,7 @@ render() {
             <div className={classes.drawerContainer}>
               <h3>Devices</h3>
             <List>
-        {this.state.data.map((text, index) => (
+        {this.state.ids.map((text, index) => (
           <ListItem button onClick={() => this.setState({device: text})}   key={text}>
             <ListItemIcon><MemoryIcon /></ListItemIcon>
 
@@ -148,16 +122,12 @@ render() {
           </Drawer>
           <main className={classes.content}>
             <Toolbar />
-            <Contents device={this.state.device}/>
+            <Contents data={this.state.data} device={this.state.device}/>
           </main>
         </div>
       );
     }
   }
 }
-
-// ClippedDrawer.PropTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
 
 export default withStyles(styles)(ClippedDrawer);
