@@ -61,7 +61,7 @@ class Chart extends Component {
 					<YAxis dataKey={this.props.yKey} />
 					<Tooltip />
 					<CartesianGrid stroke="#f5f5f5" />
-					<Line type="monotone" dataKey={this.props.yKey} stroke="#ff7300" yAxisId={0} />
+					<Line type="monotone" dataKey={this.props.yKey} stroke={this.props.lineColor} yAxisId={0} />
 				</LineChart>
 				</ResponsiveContainer>
 				</div>
