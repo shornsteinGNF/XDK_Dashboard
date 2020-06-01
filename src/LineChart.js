@@ -41,7 +41,6 @@ class Chart extends Component {
 				{TimeStamp: this.timeConverter(data_filtered[key].TimeStamp), data:data_filtered[key].data}
 			))
 
-			console.log(this.props.data)
 			return (
 				<div style={{
 					paddingBottom: '56%',

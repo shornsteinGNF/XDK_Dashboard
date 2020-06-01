@@ -14,6 +14,7 @@ import Paper from '@material-ui/core/Paper'
 import RecentTime from './RecentTime'
 import TimeFrameButtons from './TimeFrameButtons'
 import { withStyles } from '@material-ui/styles';
+import CurrentValue from './CurrentValue'
 
 const drawerWidth = 240;
 
@@ -43,32 +44,42 @@ class Contents extends Component {
       <h2>Recent</h2><RecentTime data={this.props.data} device={this.props.device}/>
       <p></p>
       <Grid container spacing={4}>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <Paper className={classes.paper}>
             <CurrentDevice device={this.props.device}/>
           </Paper>
         </Grid>
-        <Grid item xs={3}>
+        {/* <Grid item xs={3}>
           <Paper className={classes.paper}>
-            <CurrentTemp data={this.props.data} device={this.props.device}/>
+            <CurrentTemp title="Temperature:" variable="data.temp" data={this.props.data} device={this.props.device}/>
           </Paper>
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.paper}>
-            <CurrentHumidity data={this.props.data} device={this.props.device}/>
+            <CurrentBattery title="Battery:" variable="data.battery" data={this.props.data} device={this.props.device}/>
+          </Paper>
+        </Grid> */}
+        <Grid item xs={12} sm={6} md={3}>
+          <Paper className={classes.paper}>
+            <CurrentValue title="Temperature" variable="temp" data={this.props.data} device={this.props.device}/>
           </Paper>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <Paper className={classes.paper}>
-            <CurrentBattery data={this.props.data} device={this.props.device}/>
+            <CurrentValue title="Humidity" variable="humidity" data={this.props.data} device={this.props.device}/>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <Paper className={classes.paper}>
+            <CurrentValue title="Battery" variable="battery" data={this.props.data} device={this.props.device}/>
           </Paper>
         </Grid>
         </Grid>
         <br></br>
         <h2>Charts</h2>
         <TimeFrameButtons data={this.props.data} device={this.props.device}/>
-        <p></p>
-        <Grid container spacing={4}>
+        {/* <p></p>
+        <Grid container spacing={4}> */}
         {/* <Grid item xs={6}>
         <Paper className={classes.paper}>
             <ChartTemp />
@@ -89,7 +100,7 @@ class Contents extends Component {
             <ChartBattery />
         </Paper>
         </Grid> */}
-        </Grid>
+        {/* </Grid> */}
     </div>
   );
 }

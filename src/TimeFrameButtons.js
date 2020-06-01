@@ -82,22 +82,22 @@ class TimeFrameButtons extends Component {
                         <ChartBattery data={this.props.data} timeLimit = {this.state.timeLimit} device={this.props.device}/>
                         </Paper>
                         </Grid> */}
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} md={6} lg={3}>
                 <Paper className={classes.paper}>
                     <Chart title="Temperature" yKey="data.temp" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} md={6} lg={3}>
                 <Paper className={classes.paper}>
                     <Chart title="Humidity" yKey="data.humidity" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} md={6} lg={3}>
                 <Paper className={classes.paper}>
                     <ChartAcceleration title="Acceleration" yKey="temp" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} md={6} lg={3}>
                 <Paper className={classes.paper}>
                     <Chart title="Battery" yKey="data.battery" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
