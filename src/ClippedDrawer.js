@@ -46,7 +46,7 @@ const styles = theme => ({
     flexGrow: 1,
   },
   listItemText: {
-    fontSize:'12px',
+    fontSize:'14px',
   },
 });
 
@@ -95,7 +95,7 @@ render() {
               <Typography variant="h6" noWrap className={classes.title}>
                 XDK Dashboard
               </Typography>
-              <Button color="inherit" variant="outlined" onClick={() => { window.location.reload(); }}><RefreshIcon/></Button>
+              <Button color="inherit" variant="outlined" onClick={() => { this.componentDidMount(); }}><RefreshIcon/></Button>
             </Toolbar>
           </AppBar>
           <Drawer
