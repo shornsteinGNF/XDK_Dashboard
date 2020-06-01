@@ -32,6 +32,7 @@ const styles = theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    padding: 10,
   },
   drawerContainer: {
     overflow: 'auto',
@@ -43,6 +44,9 @@ const styles = theme => ({
   },
   title: {
     flexGrow: 1,
+  },
+  listItemText: {
+    fontSize:'12px',
   },
 });
 
@@ -129,11 +133,14 @@ render() {
           >
             <Toolbar />
             <div className={classes.drawerContainer}>
+              <h3>Devices</h3>
             <List>
         {this.state.data.map((text, index) => (
           <ListItem button onClick={() => this.setState({device: text})}   key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <MemoryIcon /> : <MemoryIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemIcon><MemoryIcon /></ListItemIcon>
+
+            {/* <ListItemIcon><MemoryIcon style={{ fontSize: '0.7em' }}/></ListItemIcon> */}
+            <ListItemText classes={{ primary:classes.listItemText }} primary={text} />
           </ListItem>
         ))}
       </List>
