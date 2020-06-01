@@ -47,7 +47,6 @@ class RecentTime extends Component {
 			let items = dataSource.body.Items
 			// const data = items.map(row => ({time: row.TimeStamp, temp: row.data.temp, humidity: row.data.humidity, battery: row.data.battery}))
             const data_filtered = items.filter(row => row.DeviceId == this.props.device)
-			console.log(data_filtered)
 
 			if (this.props.device == null) {
 			return (

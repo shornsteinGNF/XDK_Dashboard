@@ -22,7 +22,7 @@ class ChartAcceleration extends Component {
 	async componentDidMount() {
 		try {
 			// const response = await fetch('https://jo3lmalso6.execute-api.us-west-1.amazonaws.com/prod');
-			const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
+			const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
 			let responseJson = await response.json();
 			this.setState(
 				{
@@ -43,7 +43,8 @@ class ChartAcceleration extends Component {
 			let { dataSource } = this.state;
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
-			const xdkData = data.map(row => (
+			const data_filtered = data.filter(row => row.DeviceId == this.props.device)
+			const xdkData = data_filtered.map(row => (
 				{time: row.TimeStamp, accel_x: row.data.accel_x, accel_y: row.data.accel_y, accel_z: row.data.accel_z, accel_mag: row.data.accel_mag}))
 
 			const xdkData_filtered = xdkData.filter(row => (

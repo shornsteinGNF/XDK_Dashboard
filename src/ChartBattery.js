@@ -21,7 +21,7 @@ class ChartBattery extends Component {
 	async componentDidMount() {
 		try {
 			// const response = await fetch('https://jo3lmalso6.execute-api.us-west-1.amazonaws.com/prod');
-			const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
+			const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
 			let responseJson = await response.json();
 			this.setState(
 				{
@@ -42,8 +42,8 @@ class ChartBattery extends Component {
 			let { dataSource } = this.state;
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
-
-			const data_filtered = data.filter(row => (
+			let data_device_filter = data.filter(row => row.DeviceId == this.props.device)
+			const data_filtered = data_device_filter.filter(row => (
 				row.TimeStamp > this.props.timeLimit
 			))
 			

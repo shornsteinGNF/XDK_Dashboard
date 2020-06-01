@@ -20,8 +20,8 @@ class ChartTemp extends Component {
 	}
 	async componentDidMount() {
 		try {
-			// const response = await fetch('https://jo3lmalso6.execute-api.us-west-1.amazonaws.com/prod');
-			const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
+			const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
+			// const response = await fetch('https://mt53r15ong.execute-api.us-west-1.amazonaws.com/prod');
 			let responseJson = await response.json();
 			this.setState(
 				{
@@ -42,12 +42,12 @@ class ChartTemp extends Component {
 			let { dataSource } = this.state;
 			let items = dataSource.body.Items
 			let data = items.map(a => a);
-			const tempData = data.map(row => ({time: row.TimeStamp, temp: row.data.temp}))
+			const data_filtered = data.filter(row => row.DeviceId == this.props.device);
+
+			const tempData = data_filtered.map(row => ({time: row.TimeStamp, temp: row.data.temp}))
 
 			let tempData_filtered = tempData.filter(row => row.time > this.props.timeLimit)
-			console.log(tempData_filtered)
-
-
+			
 			function timeConverter(UNIX_timestamp){
 				var a = new Date(UNIX_timestamp*1);
 				var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
