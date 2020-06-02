@@ -57,7 +57,7 @@ class TimeFrameButtons extends Component {
                 <div className={classes.root}>
                 <Button style={{ marginInlineEnd: '10px' }} variant="outlined" size="small" onClick={ this.timeLimitDay }>1 day</Button>
                 <Button style={{ marginInlineEnd: '10px' }} variant="outlined" size="small" onClick={ this.timeLimitWeek }>1 week</Button>
-                <Button style={{ marginInline: '10px' }} variant="outlined" size="small" onClick={ this.timeLimitMonth }>1 month</Button>
+                <Button style={{ marginInlineEnd: '10px' }} variant="outlined" size="small" onClick={ this.timeLimitMonth }>1 month</Button>
                 <p></p>
                 <Grid container spacing={4}>
               <Grid item xs={12} md={6}>
