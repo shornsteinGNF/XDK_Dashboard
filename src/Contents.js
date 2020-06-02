@@ -61,46 +61,23 @@ class Contents extends Component {
         </Grid> */}
         <Grid item xs={12} sm={6} md={3}>
           <Paper className={classes.paper}>
-            <CurrentValue title="Temperature" variable="temp" data={this.props.data} device={this.props.device}/>
+            <CurrentValue title="Temperature" variable="temp" units="&#176;C" data={this.props.data} device={this.props.device}/>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Paper className={classes.paper}>
-            <CurrentValue title="Humidity" variable="humidity" data={this.props.data} device={this.props.device}/>
+            <CurrentValue title="Humidity" variable="humidity" units="%" data={this.props.data} device={this.props.device}/>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Paper className={classes.paper}>
-            <CurrentValue title="Battery" variable="battery" data={this.props.data} device={this.props.device}/>
+            <CurrentValue title="Battery" variable="battery" units="%" data={this.props.data} device={this.props.device}/>
           </Paper>
         </Grid>
         </Grid>
         {/* <br></br> */}
         <h2>Charts</h2>
         <TimeFrameButtons data={this.props.data} device={this.props.device}/>
-        {/* <p></p>
-        <Grid container spacing={4}> */}
-        {/* <Grid item xs={6}>
-        <Paper className={classes.paper}>
-            <ChartTemp />
-        </Paper>
-        </Grid> */}
-        {/* <Grid item xs={6}>
-        <Paper className={classes.paper}>
-            <ChartHumidity />
-          </Paper>
-        </Grid>
-        <Grid item xs={6}>
-        <Paper className={classes.paper}>
-          <ChartAcceleration />
-        </Paper>
-        </Grid>
-        <Grid item xs={6}>
-        <Paper className={classes.paper}>
-            <ChartBattery />
-        </Paper>
-        </Grid> */}
-        {/* </Grid> */}
     </div>
   );
 }

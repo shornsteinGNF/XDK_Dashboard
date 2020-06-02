@@ -6,7 +6,6 @@ class CurrentValue extends Component {
 		super(props);
 	}
 
-
 	render() {
 		if (this.props.data == null) {
 			return <div>Loading...</div>;
@@ -18,7 +17,7 @@ class CurrentValue extends Component {
 			    const data_filtered = this.props.data.filter(row => row.DeviceId == this.props.device)
                return (
 					<div>
-						<b>{this.props.title}: </b>{data_filtered[data_filtered.length-1]['data'][this.props.variable]}%
+						<b>{this.props.title}: </b>{data_filtered[data_filtered.length-1]['data'][this.props.variable]}{this.props.units}
 					</div>
 				);
 			}
