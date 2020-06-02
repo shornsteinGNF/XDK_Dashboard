@@ -75,7 +75,7 @@ class Contents extends Component {
           </Paper>
         </Grid>
         </Grid>
-        <br></br>
+        {/* <br></br> */}
         <h2>Charts</h2>
         <TimeFrameButtons data={this.props.data} device={this.props.device}/>
         {/* <p></p>

@@ -49,7 +49,8 @@ class Chart extends Component {
 				<div style={{
 					position: 'absolute',
 					width: '90%',
-					height: '90%'
+					height: '90%',
+					maxHeight: '300px',
 				}}>
 					<h3>{this.props.title}</h3>
 					<ResponsiveContainer>

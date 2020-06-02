@@ -60,22 +60,22 @@ class TimeFrameButtons extends Component {
                 <Button variant="outlined" size="small" onClick={ this.timeLimitMonth }>1 month</Button>
                 <p></p>
                 <Grid container spacing={4}>
-              <Grid item xs={12} md={6} lg={3}>
+              <Grid item xs={12} md={6} xl={3}>
                 <Paper className={classes.paper}>
                     <Chart title="Temperature" yKey="data.temp" lineColor="#ff9800" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>
-              <Grid item xs={12} md={6} lg={3}>
+              <Grid item xs={12} md={6} xl={3}>
                 <Paper className={classes.paper}>
                     <Chart title="Humidity" yKey="data.humidity" lineColor="#2196f3" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>
-              <Grid item xs={12} md={6} lg={3}>
+              <Grid item xs={12} md={6} xl={3}>
                 <Paper className={classes.paper}>
                     <ChartAcceleration title="Acceleration" yKey="temp" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>
-              <Grid item xs={12} md={6} lg={3}>
+              <Grid item xs={12} md={6} xl={3}>
                 <Paper className={classes.paper}>
                     <Chart title="Battery" yKey="data.battery" lineColor="#4caf50" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
