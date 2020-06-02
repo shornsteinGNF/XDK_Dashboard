@@ -16,6 +16,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MemoryIcon from '@material-ui/icons/Memory';
+import RefreshIcon from '@material-ui/icons/Refresh';
+import Button from '@material-ui/core/Button'
+
 
 const drawerWidth = 240;
 
@@ -50,8 +53,11 @@ const styles = theme => ({
   },
   content: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
+    // backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
+  },
+  title: {
+    flexGrow: 1,
   },
 });
 
@@ -91,8 +97,6 @@ class ResponsiveDrawer extends React.Component {
 
   render() {
     const { classes, theme } = this.props;
-
-
     if (this.state.data == null) {
         return(<div>loading...</div>)
       }
@@ -114,7 +118,7 @@ class ResponsiveDrawer extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar className={classes.appBar}>
+        <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
             <IconButton
               color="inherit"
@@ -124,9 +128,11 @@ class ResponsiveDrawer extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="title" color="inherit" noWrap>
+            <Typography variant="h6" color="inherit" noWrap className={classes.title}>
               XDK Dashboard
             </Typography>
+            <Button color="inherit" variant="outlined" onClick={() => { this.componentDidMount(); }}><RefreshIcon/></Button>
+
           </Toolbar>
         </AppBar>
         <Hidden mdUp>
