@@ -71,9 +71,9 @@ class ChartAcceleration extends Component {
 					<YAxis/>
 					<Tooltip />
 					<CartesianGrid stroke="#f5f5f5" />
-					<Line type="monotone" dataKey="accel_x" stroke="#ff9800"/>
-					<Line type="monotone" dataKey="accel_y" stroke="#2196f3"/>
-					<Line type="monotone" dataKey="accel_z" stroke="#4caf50"/>
+					<Line type="monotone" dataKey="accel_x" stroke="#ff9800" isAnimationActive={false}/>
+					<Line type="monotone" dataKey="accel_y" stroke="#2196f3" isAnimationActive={false}/>
+					<Line type="monotone" dataKey="accel_z" stroke="#4caf50" isAnimationActive={false}/>
 					<Legend width={100} wrapperStyle={{ top: -50, right: -15, backgroundColor: '#f5f5f5', border: '1px solid #d5d5d5', borderRadius: 3, lineHeight: '10px' }} />
 				</LineChart>
 				</ResponsiveContainer>
