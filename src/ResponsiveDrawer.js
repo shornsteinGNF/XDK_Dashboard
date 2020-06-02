@@ -165,7 +165,7 @@ class ResponsiveDrawer extends React.Component {
           </Drawer>
         </Hidden>
         <main className={classes.content}>
-          <div className={classes.toolbar} />
+          <div className={classes.toolbar}/>
           <Contents data={this.state.data} device={this.state.device}/>
         </main>
       </div>
