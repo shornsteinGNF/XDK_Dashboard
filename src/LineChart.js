@@ -50,9 +50,9 @@ class Chart extends Component {
 					position: 'absolute',
 					width: '90%',
 					height: '90%',
-					// maxHeight: '300px',
+					maxHeight: '250px',
 				}}>
-					<h3>{this.props.title}</h3>
+					<h3 style={{ textAlign:'center' }} >{this.props.title}</h3>
 					<ResponsiveContainer>
 				<LineChart
 					data={data_timeConverted}

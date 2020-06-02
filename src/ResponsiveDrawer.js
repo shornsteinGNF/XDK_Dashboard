@@ -54,6 +54,8 @@ const styles = theme => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
+    // minHeight: '100%',
+
   },
   title: {
     flexGrow: 1,

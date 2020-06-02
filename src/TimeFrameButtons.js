@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Chart from './LineChart'
-
+import { sizing } from '@material-ui/system';
 
 const dayInMs = 86400000;
 
@@ -61,22 +61,22 @@ class TimeFrameButtons extends Component {
                 <p></p>
                 <Grid container spacing={4}>
               <Grid item xs={12} md={6}>
-                <Paper className={classes.paper}>
+                <Paper className={classes.paper} style={ {maxHeight:'270px' }}>
                     <Chart title="Temperature" yKey="data.temp" lineColor="#ff9800" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>
               <Grid item xs={12} md={6}>
-                <Paper className={classes.paper}>
+                <Paper className={classes.paper} style={ {maxHeight:'270px' }}>
                     <Chart title="Humidity" yKey="data.humidity" lineColor="#2196f3" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>
               <Grid item xs={12} md={6}>
-                <Paper className={classes.paper}>
+                <Paper className={classes.paper} style={ {maxHeight:'270px' }}>
                     <ChartAcceleration title="Acceleration" yKey="temp" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>
               <Grid item xs={12} md={6}>
-                <Paper className={classes.paper}>
+                <Paper className={classes.paper} style={ {maxHeight:'270px' }}>
                     <Chart title="Battery" yKey="data.battery" lineColor="#4caf50" data={this.props.data} timeLimit={this.state.timeLimit} device={this.props.device}/>
                   </Paper>
               </Grid>

@@ -58,9 +58,10 @@ class ChartAcceleration extends Component {
 				<div style={{
 					position: 'absolute',
 					width: '90%',
-					height: '90%'
+					height: '90%',
+					maxHeight: '250px',
 				}}>
-					<h3>Acceleration</h3>
+					<h3 style={{ textAlign:'center' }} >Acceleration</h3>
 					<ResponsiveContainer>
 				<LineChart
 					data={test}
