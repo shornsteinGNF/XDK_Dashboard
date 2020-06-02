@@ -49,16 +49,6 @@ class Contents extends Component {
             <CurrentDevice device={this.props.device}/>
           </Paper>
         </Grid>
-        {/* <Grid item xs={3}>
-          <Paper className={classes.paper}>
-            <CurrentTemp title="Temperature:" variable="data.temp" data={this.props.data} device={this.props.device}/>
-          </Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>
-            <CurrentBattery title="Battery:" variable="data.battery" data={this.props.data} device={this.props.device}/>
-          </Paper>
-        </Grid> */}
         <Grid item xs={12} sm={6} md={3}>
           <Paper className={classes.paper}>
             <CurrentValue title="Temperature" variable="temp" units="&#176;C" data={this.props.data} device={this.props.device}/>
@@ -71,7 +61,7 @@ class Contents extends Component {
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Paper className={classes.paper}>
-            <CurrentValue title="Battery" variable="battery" units="%" data={this.props.data} device={this.props.device}/>
+            <CurrentValue title="Battery" variable="battery"  data={this.props.data} device={this.props.device}/>
           </Paper>
         </Grid>
         </Grid>

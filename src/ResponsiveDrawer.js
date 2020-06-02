@@ -31,12 +31,12 @@ const styles = theme => ({
   appBar: {
     position: 'absolute',
     marginLeft: drawerWidth,
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
     },
   },
   navIconHide: {
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
   },
@@ -46,7 +46,7 @@ const styles = theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       position: 'relative',
     },
   },
@@ -135,7 +135,7 @@ class ResponsiveDrawer extends React.Component {
             <Button color="inherit" variant="outlined" onClick={() => { this.componentDidMount(); }}><RefreshIcon/></Button>
           </Toolbar>
         </AppBar>
-        <Hidden mdUp>
+        <Hidden smUp>
           <Drawer
             variant="temporary"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
@@ -151,7 +151,7 @@ class ResponsiveDrawer extends React.Component {
             {drawer}
           </Drawer>
         </Hidden>
-        <Hidden smDown implementation="css">
+        <Hidden xsDown implementation="css">
           <Drawer
             variant="permanent"
             open
