@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/XDK_React_App/static/css/main.5f361e03.chunk.css",
-    "main.js": "/XDK_React_App/static/js/main.2a4ee553.chunk.js",
-    "main.js.map": "/XDK_React_App/static/js/main.2a4ee553.chunk.js.map",
-    "runtime-main.js": "/XDK_React_App/static/js/runtime-main.87a96a07.js",
-    "runtime-main.js.map": "/XDK_React_App/static/js/runtime-main.87a96a07.js.map",
-    "static/js/2.c052bfbe.chunk.js": "/XDK_React_App/static/js/2.c052bfbe.chunk.js",
-    "static/js/2.c052bfbe.chunk.js.map": "/XDK_React_App/static/js/2.c052bfbe.chunk.js.map",
-    "index.html": "/XDK_React_App/index.html",
-    "precache-manifest.3e8c761657c8f29fe1d80d3525e6b20a.js": "/XDK_React_App/precache-manifest.3e8c761657c8f29fe1d80d3525e6b20a.js",
-    "service-worker.js": "/XDK_React_App/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/XDK_React_App/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.c052bfbe.chunk.js.LICENSE.txt": "/XDK_React_App/static/js/2.c052bfbe.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/XDK_React_App/static/media/logo.5d5d9eef.svg"
+    "main.css": "/XDK_Dashboard/static/css/main.523f09c5.chunk.css",
+    "main.js": "/XDK_Dashboard/static/js/main.2f26920d.chunk.js",
+    "main.js.map": "/XDK_Dashboard/static/js/main.2f26920d.chunk.js.map",
+    "runtime-main.js": "/XDK_Dashboard/static/js/runtime-main.ca9a7fa2.js",
+    "runtime-main.js.map": "/XDK_Dashboard/static/js/runtime-main.ca9a7fa2.js.map",
+    "static/js/2.be55ea42.chunk.js": "/XDK_Dashboard/static/js/2.be55ea42.chunk.js",
+    "static/js/2.be55ea42.chunk.js.map": "/XDK_Dashboard/static/js/2.be55ea42.chunk.js.map",
+    "index.html": "/XDK_Dashboard/index.html",
+    "precache-manifest.f4b8f0b8b2cb14fe49c3b323a255dc96.js": "/XDK_Dashboard/precache-manifest.f4b8f0b8b2cb14fe49c3b323a255dc96.js",
+    "service-worker.js": "/XDK_Dashboard/service-worker.js",
+    "static/css/main.523f09c5.chunk.css.map": "/XDK_Dashboard/static/css/main.523f09c5.chunk.css.map",
+    "static/js/2.be55ea42.chunk.js.LICENSE.txt": "/XDK_Dashboard/static/js/2.be55ea42.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.87a96a07.js",
-    "static/js/2.c052bfbe.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.2a4ee553.chunk.js"
+    "static/js/runtime-main.ca9a7fa2.js",
+    "static/js/2.be55ea42.chunk.js",
+    "static/css/main.523f09c5.chunk.css",
+    "static/js/main.2f26920d.chunk.js"
   ]
 }
