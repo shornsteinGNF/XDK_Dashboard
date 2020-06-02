@@ -25,7 +25,7 @@ const drawerWidth = 240;
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    // height: 430,
+    // height: 1000,
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
@@ -45,6 +45,9 @@ const styles = theme => ({
     },
   },
   toolbar: theme.mixins.toolbar,
+  drawerContainer: {
+    overflow: 'auto',
+  },
   drawerPaper: {
     width: drawerWidth,
     [theme.breakpoints.up('md')]: {
@@ -53,7 +56,7 @@ const styles = theme => ({
   },
   content: {
     flexGrow: 1,
-    // backgroundColor: theme.palette.background.default,
+    backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
   },
   title: {
@@ -101,13 +104,12 @@ class ResponsiveDrawer extends React.Component {
         return(<div>loading...</div>)
       }
     else {
-
         const drawer = (
             <div>
               <div className={classes.toolbar} />
               <List >
               {this.state.ids.map((text, index) => (
-                <ListItem button onClick={() => this.setState({device: text})}   key={text}>
+                <ListItem button onClick={() => this.setState({device: text, mobileOpen: false})} key={text}>
                   <ListItemIcon><MemoryIcon /></ListItemIcon>
                   <ListItemText classes={{ primary:classes.listItemText }} primary={text} />
                 </ListItem>
@@ -132,7 +134,6 @@ class ResponsiveDrawer extends React.Component {
               XDK Dashboard
             </Typography>
             <Button color="inherit" variant="outlined" onClick={() => { this.componentDidMount(); }}><RefreshIcon/></Button>
-
           </Toolbar>
         </AppBar>
         <Hidden mdUp>
@@ -171,7 +172,5 @@ class ResponsiveDrawer extends React.Component {
         }
   }
 }
-
-
 
 export default withStyles(styles, { withTheme: true })(ResponsiveDrawer);

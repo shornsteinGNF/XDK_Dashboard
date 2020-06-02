@@ -50,7 +50,7 @@ class Chart extends Component {
 					position: 'absolute',
 					width: '90%',
 					height: '90%',
-					maxHeight: '300px',
+					// maxHeight: '300px',
 				}}>
 					<h3>{this.props.title}</h3>
 					<ResponsiveContainer>
