@@ -103,6 +103,8 @@ class ResponsiveDrawer extends React.Component {
         const drawer = (
             <div>
               <div className={classes.toolbar} />
+              <Divider />
+              <h3 style={{ paddingLeft: '20px' }} >Devices</h3>
               <List >
               {this.state.ids.map((text) => (
                 <ListItem button onClick={() => this.setState({mobileOpen: false, device: text})} key={text}>
@@ -111,6 +113,7 @@ class ResponsiveDrawer extends React.Component {
               </ListItem>
               ))}
             </List>
+            {/* <Divider /> */}
             </div>
           );
 
