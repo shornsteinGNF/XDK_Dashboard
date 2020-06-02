@@ -34,7 +34,11 @@ class RecentTime extends Component {
             var date = a.getDate();
             var hour = a.getHours();
             var min = a.getMinutes();
-            var sec = a.getSeconds();
+			var sec = a.getSeconds();
+			if (date.toString().length==1) {date = "0" + date}
+			if (hour.toString().length==1) {hour = "0" + hour}
+			if (min.toString().length==1) {min = "0" + min}
+			if (sec.toString().length==1) {sec = "0" + sec}
             var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
             // var time = toString(time)
             return time;
