@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import ClippedDrawer from './ClippedDrawer'
 import ClippedDrawer_old from './ClippedDrawer_old'
+import ResponsiveDrawer from './ResponsiveDrawer'
+import ResponsiveDrawer_orig from './ResponsiveDrawer_orig'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +22,7 @@ function App() {
   
   return (
     <div className={classes.root}>
-      <ClippedDrawer/>
+      <ResponsiveDrawer />
     </div>
   );
 }
