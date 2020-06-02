@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,16 +8,13 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 import Divider from '@material-ui/core/Divider';
-import MenuIcon from '@material-ui/icons/Menu';
-// import { mailFolderListItems, otherMailFolderListItems } from './tileData';
-import Contents from './Contents'
+import MenuIcon from '@material-ui/icons/Menu';import Contents from './Contents'
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MemoryIcon from '@material-ui/icons/Memory';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import Button from '@material-ui/core/Button'
-
 
 const drawerWidth = 240;
 
@@ -108,11 +104,11 @@ class ResponsiveDrawer extends React.Component {
             <div>
               <div className={classes.toolbar} />
               <List >
-              {this.state.ids.map((text, index) => (
-                <ListItem button onClick={() => this.setState({device: text, mobileOpen: false})} key={text}>
+              {this.state.ids.map((text) => (
+                <ListItem button onClick={() => this.setState({mobileOpen: false, device: text})} key={text}>
                   <ListItemIcon><MemoryIcon /></ListItemIcon>
                   <ListItemText classes={{ primary:classes.listItemText }} primary={text} />
-                </ListItem>
+              </ListItem>
               ))}
             </List>
             </div>
