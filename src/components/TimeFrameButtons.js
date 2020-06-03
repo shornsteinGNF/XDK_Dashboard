@@ -25,7 +25,7 @@ class TimeFrameButtons extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      timeLimit: 0,
+      timeLimit: Date.now() - dayInMs,
       device: null,
     };
   }
@@ -44,8 +44,8 @@ class TimeFrameButtons extends Component {
 
   timeLimitMonth = () => {
     var currTimestamp = Date.now();
-    var timeLimit = currTimestamp - 30 * dayInMs;
-    this.setState({ timeLimit: timeLimit });
+    var time = currTimestamp - 30 * dayInMs;
+    this.setState({ timeLimit: time });
   };
 
   render() {
