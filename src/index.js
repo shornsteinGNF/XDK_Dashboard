@@ -1,19 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    {/* <Bar />
-    <ChartTemp />
-    <ChartHumidity />
-    <CurrentTemp />
-    <CurrentHumidity /> */}
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-serviceWorker.unregister();
