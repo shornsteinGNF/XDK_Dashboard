@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import CurrentDevice from "./CurrentDevice";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import RecentTime from "./RecentTime";
-import TimeFrameButtons from "./TimeFrameButtons";
 import { withStyles } from "@material-ui/styles";
-import CurrentValue from "./CurrentValue";
+import RecentDevice from "./RecentDevice";
+import RecentTime from "./RecentTime";
+import RecentValue from "./RecentValue";
+import TimeFrameButtons from "./TimeFrameButtons";
 
 const styles = (theme) => ({
   root: {
@@ -35,12 +35,12 @@ class Contents extends Component {
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={3}>
             <Paper className={classes.paper}>
-              <CurrentDevice device={this.props.device} />
+              <RecentDevice device={this.props.device} />
             </Paper>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <Paper className={classes.paper}>
-              <CurrentValue
+              <RecentValue
                 title="Temperature"
                 variable="temp"
                 units="&#176;C"
@@ -51,7 +51,7 @@ class Contents extends Component {
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <Paper className={classes.paper}>
-              <CurrentValue
+              <RecentValue
                 title="Humidity"
                 variable="humidity"
                 units="%"
@@ -62,7 +62,7 @@ class Contents extends Component {
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <Paper className={classes.paper}>
-              <CurrentValue
+              <RecentValue
                 title="Battery"
                 variable="battery"
                 data={this.props.data}

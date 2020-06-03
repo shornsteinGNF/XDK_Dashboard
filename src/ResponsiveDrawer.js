@@ -1,28 +1,28 @@
 import React from "react";
-import { withStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
+
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import Divider from "@material-ui/core/Divider";
+import Drawer from "@material-ui/core/Drawer";
 import IconButton from "@material-ui/core/IconButton";
 import Hidden from "@material-ui/core/Hidden";
-import Divider from "@material-ui/core/Divider";
-import MenuIcon from "@material-ui/icons/Menu";
-import Contents from "./Contents";
+import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MemoryIcon from "@material-ui/icons/Memory";
+import MenuIcon from "@material-ui/icons/Menu";
 import RefreshIcon from "@material-ui/icons/Refresh";
-import Button from "@material-ui/core/Button";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@material-ui/core/styles";
+import Contents from "./Contents";
 
 const drawerWidth = 240;
 
 const styles = (theme) => ({
   root: {
     flexGrow: 1,
-    // height: 1000,
     zIndex: 1,
     overflow: "hidden",
     position: "relative",
@@ -55,7 +55,6 @@ const styles = (theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
-    // minHeight: '100%',
   },
   title: {
     flexGrow: 1,

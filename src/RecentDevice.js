@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 
-class CurrentValues extends Component {
+class RecentDevice extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,4 +27,4 @@ class CurrentValues extends Component {
   }
 }
 
-export default CurrentValues;
+export default RecentDevice;

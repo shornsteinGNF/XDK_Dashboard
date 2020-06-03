@@ -5,8 +5,7 @@ import ChartAcceleration from "./ChartAcceleration";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import Chart from "./LineChart";
-import { sizing } from "@material-ui/system";
+import ChartLine from "./ChartLine";
 
 const dayInMs = 86400000;
 
@@ -81,7 +80,7 @@ class TimeFrameButtons extends Component {
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Paper className={classes.paper} style={{ maxHeight: "270px" }}>
-              <Chart
+              <ChartLine
                 title="Temperature"
                 yKey="data.temp"
                 lineColor="#ff9800"
@@ -93,7 +92,7 @@ class TimeFrameButtons extends Component {
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper className={classes.paper} style={{ maxHeight: "270px" }}>
-              <Chart
+              <ChartLine
                 title="Humidity"
                 yKey="data.humidity"
                 lineColor="#2196f3"
@@ -116,7 +115,7 @@ class TimeFrameButtons extends Component {
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper className={classes.paper} style={{ maxHeight: "270px" }}>
-              <Chart
+              <ChartLine
                 title="Battery"
                 yKey="data.battery"
                 lineColor="#4caf50"

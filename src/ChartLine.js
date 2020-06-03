@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-class Chart extends Component {
+class ChartLine extends Component {
   constructor(props) {
     super(props);
   }
@@ -97,4 +97,4 @@ class Chart extends Component {
     }
   }
 }
-export default Chart;
+export default ChartLine;
