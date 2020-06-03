@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import ResponsiveDrawer from "./ResponsiveDrawer";
+import ResponsiveDrawer from "./components/ResponsiveDrawer";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({

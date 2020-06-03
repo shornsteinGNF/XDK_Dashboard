@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 
 class RecentDevice extends Component {
   constructor(props) {

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 import { Button } from "@material-ui/core";
 import ChartAcceleration from "./ChartAcceleration";
 import Grid from "@material-ui/core/Grid";
