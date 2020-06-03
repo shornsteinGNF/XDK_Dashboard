@@ -9,11 +9,21 @@ class CurrentValues extends Component {
 	}
 
 	render() {
+		if (this.props.device === null) {
             return (
+				<div>
+                    <b>Device: </b>Select a device
+				</div>
+			);
+		}
+		else {
+			return (
 				<div>
                     <b>Device: </b>{this.props.device}
 				</div>
 			);
+		}
+
 		}
 	}
 
