@@ -1,12 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-import ChartAcceleration from './ChartAcceleration'
-import ChartBattery from './ChartBattery'
-import CurrentBattery from './CurrentBattery'
-import ChartHumidity from './ChartHumidity'
-import ChartTemp from './ChartTemp'
-import CurrentHumidity from './CurrentHumidity'
-import CurrentTemp from './CurrentTemp'
 import CurrentDevice from './CurrentDevice'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'

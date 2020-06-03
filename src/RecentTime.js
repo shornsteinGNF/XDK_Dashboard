@@ -8,21 +8,6 @@ class RecentTime extends Component {
 			dataSource: null
 		};
 	}
-	// async componentDidMount() {
-	// 	try {
-	// 		const response = await fetch('https://hx63ml0hmc.execute-api.us-west-1.amazonaws.com/dev');
-	// 		let responseJson = await response.json();
-	// 		this.setState(
-	// 			{
-	// 				isLoading: false,
-	// 				dataSource: responseJson
-	// 			},
-	// 			function() {}
-	// 		);
-	// 	} catch (error) {
-	// 		console.error(error);
-	// 	}
-    // }
 
 	render() {
 

@@ -1,10 +1,7 @@
-import React from 'react';
-import './App.css';
-import ClippedDrawer from './ClippedDrawer'
-import ClippedDrawer_old from './ClippedDrawer_old'
-import ResponsiveDrawer from './ResponsiveDrawer'
-import ResponsiveDrawer_orig from './ResponsiveDrawer_orig'
-import { makeStyles } from '@material-ui/core/styles'
+import React from "react";
+import "./App.css";
+import ResponsiveDrawer from "./ResponsiveDrawer";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,14 +9,14 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
+    textAlign: "center",
     color: theme.palette.text.secondary,
   },
 }));
 
 function App() {
   const classes = useStyles();
-  
+
   return (
     <div className={classes.root}>
       <ResponsiveDrawer />
