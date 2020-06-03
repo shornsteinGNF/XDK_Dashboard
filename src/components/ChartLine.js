@@ -10,10 +10,6 @@ import {
 } from "recharts";
 
 class ChartLine extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   timeConverter(UNIX_timestamp) {
     var a = new Date(UNIX_timestamp * 1);
     var months = [
