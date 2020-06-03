@@ -20,12 +20,12 @@ class ChartAcceleration extends Component {
   }
 
   render() {
-    if (this.props.data == null) {
+    if (this.props.data === null) {
       return <div>Loading...</div>;
     } else {
       let data = this.props.data;
       const data_filtered = data.filter(
-        (row) => row.DeviceId == this.props.device
+        (row) => row.DeviceId === this.props.device
       );
       const xdkData = data_filtered.map((row) => ({
         time: row.TimeStamp,

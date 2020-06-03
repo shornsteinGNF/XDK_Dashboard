@@ -6,14 +6,14 @@ class CurrentValue extends Component {
   }
 
   render() {
-    if (this.props.data == null) {
+    if (this.props.data === null) {
       return <div>Loading...</div>;
     } else {
-      if (this.props.device == null) {
+      if (this.props.device === null) {
         return <b>{this.props.title}:</b>;
       } else {
         const data_filtered = this.props.data.filter(
-          (row) => row.DeviceId == this.props.device
+          (row) => row.DeviceId === this.props.device
         );
         return (
           <div>

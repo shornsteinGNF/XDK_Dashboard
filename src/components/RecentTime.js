@@ -32,16 +32,16 @@ class RecentTime extends Component {
       var hour = a.getHours();
       var min = a.getMinutes();
       var sec = a.getSeconds();
-      if (date.toString().length == 1) {
+      if (date.toString().length === 1) {
         date = "0" + date;
       }
-      if (hour.toString().length == 1) {
+      if (hour.toString().length === 1) {
         hour = "0" + hour;
       }
-      if (min.toString().length == 1) {
+      if (min.toString().length === 1) {
         min = "0" + min;
       }
-      if (sec.toString().length == 1) {
+      if (sec.toString().length === 1) {
         sec = "0" + sec;
       }
       var time =
@@ -49,15 +49,15 @@ class RecentTime extends Component {
       return time;
     }
 
-    if (this.props.data == null) {
+    if (this.props.data === null) {
       return <i>Last reading:</i>;
     } else {
       let data = this.props.data;
       const data_filtered = data.filter(
-        (row) => row.DeviceId == this.props.device
+        (row) => row.DeviceId === this.props.device
       );
 
-      if (this.props.device == null) {
+      if (this.props.device === null) {
         return <i>Last reading:</i>;
       } else {
         return (
