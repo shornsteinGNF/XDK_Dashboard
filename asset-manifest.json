@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/XDK_Dashboard/static/css/main.523f09c5.chunk.css",
-    "main.js": "/XDK_Dashboard/static/js/main.7d4d85e9.chunk.js",
-    "main.js.map": "/XDK_Dashboard/static/js/main.7d4d85e9.chunk.js.map",
+    "main.js": "/XDK_Dashboard/static/js/main.17b186ac.chunk.js",
+    "main.js.map": "/XDK_Dashboard/static/js/main.17b186ac.chunk.js.map",
     "runtime-main.js": "/XDK_Dashboard/static/js/runtime-main.ca9a7fa2.js",
     "runtime-main.js.map": "/XDK_Dashboard/static/js/runtime-main.ca9a7fa2.js.map",
     "static/js/2.896624cd.chunk.js": "/XDK_Dashboard/static/js/2.896624cd.chunk.js",
     "static/js/2.896624cd.chunk.js.map": "/XDK_Dashboard/static/js/2.896624cd.chunk.js.map",
     "index.html": "/XDK_Dashboard/index.html",
-    "precache-manifest.af467cb034585ebd69f22a6e78362df7.js": "/XDK_Dashboard/precache-manifest.af467cb034585ebd69f22a6e78362df7.js",
+    "precache-manifest.91004d4c4492b78e3d7bedc9df97bc6b.js": "/XDK_Dashboard/precache-manifest.91004d4c4492b78e3d7bedc9df97bc6b.js",
     "service-worker.js": "/XDK_Dashboard/service-worker.js",
     "static/css/main.523f09c5.chunk.css.map": "/XDK_Dashboard/static/css/main.523f09c5.chunk.css.map",
     "static/js/2.896624cd.chunk.js.LICENSE.txt": "/XDK_Dashboard/static/js/2.896624cd.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ca9a7fa2.js",
     "static/js/2.896624cd.chunk.js",
     "static/css/main.523f09c5.chunk.css",
-    "static/js/main.7d4d85e9.chunk.js"
+    "static/js/main.17b186ac.chunk.js"
   ]
 }
