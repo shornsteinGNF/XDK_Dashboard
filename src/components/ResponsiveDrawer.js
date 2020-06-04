@@ -102,7 +102,7 @@ class ResponsiveDrawer extends React.Component {
         <div>
           <div className={classes.toolbar} />
           <Divider />
-          <h3 style={{ paddingLeft: "20px" }}>Devices</h3>
+          <h3 style={{ paddingLeft: "20px", marginBottom: "0px" }}>Devices</h3>
           <List>
             {this.state.ids.map((text) => (
               <ListItem

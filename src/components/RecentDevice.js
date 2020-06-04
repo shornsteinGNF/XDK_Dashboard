@@ -12,7 +12,7 @@ class RecentDevice extends Component {
     if (this.props.device === null) {
       return (
         <div>
-          <b>Device: </b>Select a device
+          <b>Device: </b>None selected
         </div>
       );
     } else {
