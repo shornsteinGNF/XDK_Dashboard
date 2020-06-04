@@ -64,6 +64,7 @@ class Contents extends Component {
               <RecentValue
                 title="Battery"
                 variable="battery"
+                units="%"
                 data={this.props.data}
                 device={this.props.device}
               />
