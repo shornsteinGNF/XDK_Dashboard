@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import ChartLine from "./ChartLine";
+import CsvExport from './CsvExport';
 
 const dayInMs = 86400000;
 
@@ -75,6 +76,10 @@ class TimeFrameButtons extends Component {
         >
           1 month
         </Button>
+        <CsvExport
+          data={this.props.data}
+          timeLimit={this.state.timeLimit}
+          device={this.props.device}/>
         <p></p>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
