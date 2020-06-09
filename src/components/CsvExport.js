@@ -79,25 +79,22 @@ export class CsvExport extends Component {
         link.setAttribute("href", encodedUri);
         link.setAttribute("download", "xdk_data_"+Date.now()+".csv");
         document.body.appendChild(link); // Required for FF
-        // console.log(res)
         return link.click(); // This will download the data file named "my_data.csv".
     }
     
     render() {
         if (this.props.data === null) {
-            console.log(this.props.data)
           return;
         } else {
           return (
             <div>
-            <Button style={{ display: "inline-block" }} variant="contained" color="primary" size="small" onClick={this.export}>
+            <Button variant="contained" color="primary" size="small" onClick={this.export}>
               Export
             </Button>
           </div>
           );
         }
       }
-
 }
 
 export default CsvExport;

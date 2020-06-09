@@ -52,6 +52,7 @@ class TimeFrameButtons extends Component {
   render() {
     return (
       <div className={classes.root}>
+        <Grid container spacing={12}>
         <Button
           style={{ marginInlineEnd: "10px", backgroundColor: "White" }}
           variant="outlined"
@@ -69,7 +70,7 @@ class TimeFrameButtons extends Component {
           1 week
         </Button>
         <Button
-          style={{ marginInlineEnd: "10px", backgroundColor: "White" }}
+          style={{ marginInlineEnd: `calc(100% - 302px)`, backgroundColor: "White" }}
           variant="outlined"
           size="small"
           onClick={this.timeLimitMonth}
@@ -77,9 +78,11 @@ class TimeFrameButtons extends Component {
           1 month
         </Button>
         <CsvExport
+          style={{ textAlign: "right" }}
           data={this.props.data}
           timeLimit={this.state.timeLimit}
           device={this.props.device}/>
+          </Grid>
         <p></p>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
