@@ -66,7 +66,7 @@ export class CsvExport extends Component {
             battery: row.data.battery,
           }));
 
-        var headers = ['Date','Time', 'Temperature (C)', "Humidity (%)", 'Acceleration_x', 'Acceleration_y', 'Acceleration_z', 'Battery (%)']
+        var headers = ['Date','Time', 'Temperature (C)', "Humidity (%)", 'Acceleration_x (milli-g)', 'Acceleration_y (milli-g)', 'Acceleration_z (milli-g)', 'Battery (%)']
         var res = arr.map(function(item) {
             return Object.values(item);
           });
