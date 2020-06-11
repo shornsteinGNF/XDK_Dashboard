@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import AccelerationReference from './AccelerationReference'
+import Grid from "@material-ui/core/Grid";
 import {
   LineChart,
   CartesianGrid,
@@ -34,11 +36,9 @@ class ChartAcceleration extends Component {
         accel_z: row.data.accel_z,
         accel_mag: row.data.accel_mag,
       }));
-
       const xdkData_filtered = xdkData.filter(
         (row) => row.time > this.props.timeLimit
       );
-
       function timeConverter(UNIX_timestamp) {
         var a = new Date(UNIX_timestamp * 1);
         var months = [
@@ -65,7 +65,6 @@ class ChartAcceleration extends Component {
           date + " " + month + " " + year + " " + hour + ":" + min + ":" + sec;
         return time;
       }
-
       const test = Object.keys(xdkData_filtered).map((key) => ({
         time: timeConverter(xdkData_filtered[key].time),
         accel_x: xdkData_filtered[key].accel_x,
@@ -73,7 +72,6 @@ class ChartAcceleration extends Component {
         accel_z: xdkData[key].accel_z,
         accel_mag: xdkData[key].accel_mag,
       }));
-
       return (
         <div
           style={{
@@ -89,7 +87,9 @@ class ChartAcceleration extends Component {
               maxHeight: "250px",
             }}
           >
-            <h3 style={{ textAlign: "center" }}>Acceleration</h3>
+            {/* <Grid container spacing={12}> */}
+            <h3 style={{ textAlign: "center" }}>Acceleration <div style={{ display: "inline-block", width: 0 }}><AccelerationReference /></div></h3>
+            {/* </Grid> */}
             <ResponsiveContainer>
               <LineChart
                 data={test}
