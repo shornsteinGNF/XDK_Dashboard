@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "40fe925b2a8bac00d37d762cb1df22d7",
+    "revision": "c140467dd75fc67779b4aa3dcffd1248",
     "url": "/XDK_Dashboard/index.html"
   },
   {
-    "revision": "7c4f8a90cb42569cfb69",
+    "revision": "d8404c9e2b5b6aa66b3c",
     "url": "/XDK_Dashboard/static/css/main.523f09c5.chunk.css"
   },
   {
-    "revision": "b2936eec19792f4e4174",
-    "url": "/XDK_Dashboard/static/js/2.896624cd.chunk.js"
+    "revision": "98913b559f8efd706707",
+    "url": "/XDK_Dashboard/static/js/2.121cb0e9.chunk.js"
   },
   {
     "revision": "b815bed3bedb5a8af7470bb094451139",
-    "url": "/XDK_Dashboard/static/js/2.896624cd.chunk.js.LICENSE.txt"
+    "url": "/XDK_Dashboard/static/js/2.121cb0e9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7c4f8a90cb42569cfb69",
-    "url": "/XDK_Dashboard/static/js/main.17b186ac.chunk.js"
+    "revision": "d8404c9e2b5b6aa66b3c",
+    "url": "/XDK_Dashboard/static/js/main.46add5c2.chunk.js"
   },
   {
     "revision": "0b0a20a687553dfe5c2b",

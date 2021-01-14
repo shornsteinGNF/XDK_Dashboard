@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/XDK_Dashboard/static/css/main.523f09c5.chunk.css",
-    "main.js": "/XDK_Dashboard/static/js/main.17b186ac.chunk.js",
-    "main.js.map": "/XDK_Dashboard/static/js/main.17b186ac.chunk.js.map",
+    "main.js": "/XDK_Dashboard/static/js/main.46add5c2.chunk.js",
+    "main.js.map": "/XDK_Dashboard/static/js/main.46add5c2.chunk.js.map",
     "runtime-main.js": "/XDK_Dashboard/static/js/runtime-main.ca9a7fa2.js",
     "runtime-main.js.map": "/XDK_Dashboard/static/js/runtime-main.ca9a7fa2.js.map",
-    "static/js/2.896624cd.chunk.js": "/XDK_Dashboard/static/js/2.896624cd.chunk.js",
-    "static/js/2.896624cd.chunk.js.map": "/XDK_Dashboard/static/js/2.896624cd.chunk.js.map",
+    "static/js/2.121cb0e9.chunk.js": "/XDK_Dashboard/static/js/2.121cb0e9.chunk.js",
+    "static/js/2.121cb0e9.chunk.js.map": "/XDK_Dashboard/static/js/2.121cb0e9.chunk.js.map",
     "index.html": "/XDK_Dashboard/index.html",
-    "precache-manifest.91004d4c4492b78e3d7bedc9df97bc6b.js": "/XDK_Dashboard/precache-manifest.91004d4c4492b78e3d7bedc9df97bc6b.js",
+    "precache-manifest.a44120372ce4e8f5d416fce7fea02ad4.js": "/XDK_Dashboard/precache-manifest.a44120372ce4e8f5d416fce7fea02ad4.js",
     "service-worker.js": "/XDK_Dashboard/service-worker.js",
     "static/css/main.523f09c5.chunk.css.map": "/XDK_Dashboard/static/css/main.523f09c5.chunk.css.map",
-    "static/js/2.896624cd.chunk.js.LICENSE.txt": "/XDK_Dashboard/static/js/2.896624cd.chunk.js.LICENSE.txt"
+    "static/js/2.121cb0e9.chunk.js.LICENSE.txt": "/XDK_Dashboard/static/js/2.121cb0e9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ca9a7fa2.js",
-    "static/js/2.896624cd.chunk.js",
+    "static/js/2.121cb0e9.chunk.js",
     "static/css/main.523f09c5.chunk.css",
-    "static/js/main.17b186ac.chunk.js"
+    "static/js/main.46add5c2.chunk.js"
   ]
 }
