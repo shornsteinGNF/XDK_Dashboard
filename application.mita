@@ -1,0 +1,40 @@
+package main;
+import platforms.xdk110;
+
+setup net: WLAN {
+	ssid = "EMP";
+	authentication = Personal(psk = "_"); //.gitignore password
+}
+
+setup backend: MQTT {
+	transport = net;
+	url = "mqtt://_"; //match to aws mqtt server public ipv4 @ port:1833
+	clientId = "xdk_mosquitto";
+
+	var telemetry = topic("things/xdk_mosquitto/shadow/update"); //"things/{thing_name}/shadow/update"
+}
+
+fn getJsonData() {
+	var temp = environment.temperature.read()/1000;
+	var humidity = environment.humidity.read();
+	var accel_x = accelerometer.x_axis.read()-93;
+	var accel_y = accelerometer.y_axis.read()+33;
+	var accel_z = accelerometer.z_axis.read()-4180;
+	
+	let ps = XDK110.powerStatus.read();
+    where(ps) {
+        is(PowerStatus.Battery -> level) {
+        	let battery = level;
+        	return `{"temp":${temp}, "humidity":${humidity}, "accel_x":${accel_x}, "accel_y":${accel_y}, "accel_z":${accel_z}, "battery":${battery}}`;
+        }
+        is(PowerStatus.Corded) {
+        	let battery = "100";
+        	return `{"temp":${temp}, "humidity":${humidity}, "accel_x":${accel_x}, "accel_y":${accel_y}, "accel_z":${accel_z}, "battery":${battery}}`;
+        }
+    }  
+}
+
+every 1000 milliseconds {
+	backend.telemetry.write(getJsonData());
+	println(getJsonData());
+}
